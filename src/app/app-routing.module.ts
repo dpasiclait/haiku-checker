@@ -6,6 +6,11 @@ import { HaikuFactsComponent } from "./haiku/haiku-facts/haiku-facts.component";
 const routes: Routes = [
   { path: '', component: HaikuCheckerComponent },
   { path: 'facts', component: HaikuFactsComponent},
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module')
+      .then(module => module.AboutModule),
+  },
 ];
 
 @NgModule({
