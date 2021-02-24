@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HaikuModule } from './haiku/haiku.module';
 import { HeaderComponent } from './header/header.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     AngularMaterialModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     HaikuModule,
     NoopAnimationsModule

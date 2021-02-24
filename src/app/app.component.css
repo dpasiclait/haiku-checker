@@ -1,0 +1,11 @@
+main {
+  height: 79%;
+  width: 80%;
+  margin: 1rem auto; /* 1rem = 16px to be put on top*/
+}
+
+app-header, app-footer {
+  height: 10%;
+}
+
+
