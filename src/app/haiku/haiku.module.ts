@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { AngularMaterialModule } from "../angular-material.module";
 import { HaikuCheckerComponent } from "./haiku-checker/haiku-checker.component";
 import { HaikuFactsComponent } from "./haiku-facts/haiku-facts.component";
 
@@ -9,6 +10,7 @@ import { HaikuFactsComponent } from "./haiku-facts/haiku-facts.component";
     HaikuFactsComponent,
   ],
   imports: [
+    AngularMaterialModule,
     CommonModule,
   ]
 })
