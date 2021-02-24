@@ -1,0 +1,88 @@
+mat-card-title {
+  margin: auto;
+  color: #3a243b;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  margin: auto 5% auto 5%;
+  color: #9b619e;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+  font-size: x-large;
+}
+
+mat-card-content {
+  margin: auto;
+  color: #3a243b;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+  font-size: x-large;
+}
+
+span.indent {
+  margin-left: 5%;
+}
+
+.mat-display-1 {
+  width: 80%;
+  text-align: justify;
+  padding-top: 1rem;
+  font-size: xx-large;
+}
+
+.content {
+  margin-top: 1rem;
+  width: 80%;
+  box-shadow: 5px 5px 4px #9b619e;
+}
+
+.right-card{
+  margin-left: 10%;
+}
+.right-card mat-card-title, .right-card mat-card-subtitle {
+  text-align: right;
+}
+.right-card mat-card-content {
+  text-align: left;
+}
+
+.left-card{
+  margin-left: 10px;
+}
+.left-card mat-card-title, .left-card mat-card-subtitle {
+  text-align: left;
+}
+.left-card mat-card-content {
+  text-align: right;
+}
+
+.scroll {
+  height: 95%;
+  background-color: #ffd633;
+  padding: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 5px 5px 4px #9b619e;
+}
+
+.indent {
+  text-indent: 5%;
+  margin: auto;
+}
+
+.cutting-words{
+  color: #9b619e;
+  font-size: medium;
+  margin: auto 10% auto auto;
+}
+
+.spacer {
+  margin: 1rem 1rem;
+}
+
+.italicized {
+  font-weight: bold;
+  font-style: italic;
+  color: #9b619e;
+}
