@@ -24,9 +24,9 @@ exports.verifyHaiku = (req, res, next) => {
     });
   }
 
-  firstVerse = firstVerse.split(' ');
-  secondVerse = secondVerse.split(' ');
-  thirdVerse = thirdVerse.split(' ');
+  firstVerse = firstVerse.toLocaleLowerCase().split(' ');
+  secondVerse = secondVerse.toLocaleLowerCase().split(' ');
+  thirdVerse = thirdVerse.toLocaleLowerCase().split(' ');
 
   // Word.find({ word: ['placers', 'two', 'writable', 'best', 'prosing']})
   //   .then(words => {
