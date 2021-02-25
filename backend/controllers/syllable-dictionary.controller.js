@@ -1,21 +1,84 @@
 const Word = require('../models/word.model');
 const jsonData = require('../resources/syllables.json');
-const fs = require('fs');
 
-exports.findSyllables = (req, res, next) => {
+const countVerseSyllables = (line, wordSyllableIndex) => {
+  let syllableCount = 0;
+  line.forEach(word => {
+    syllableCount += wordSyllableIndex[word];
+  });
+
+  return syllableCount;
+}
+
+exports.verifyHaiku = (req, res, next) => {
   const {
-    firstLine,
-    secondLine,
-    thirdLine
+    firstVerse,
+    secondVerse,
+    thirdVerse
   } = req.body;
 
-  res.status(200).json({
-    payload: 'Hello world',
-    timestamp: Date.now()
-  });
+  if (!firstVerse || !secondVerse || !thirdVerse) {
+    return res.status(400).json({
+      payload: 'At least one verse is missing',
+      timestamp: Date.now()
+    });
+  }
+
+  firstVerse = firstVerse.split(' ');
+  secondVerse = secondVerse.split(' ');
+  thirdVerse = thirdVerse.split(' ');
+
+  // Word.find({ word: ['placers', 'two', 'writable', 'best', 'prosing']})
+  //   .then(words => {
+  //     let wordSyllableIndex = {};
+  //     words.forEach(wordSyllable => {
+  //       const { word, syllables } = wordSyllable;
+  //       wordSyllableIndex[word] = syllables;
+  //     });
+
+  //     const haikuSyllablesCount = {
+  //       firstLineCount: countLineSyllables(['placers', 'two', 'prosing'], wordSyllableIndex),
+  //       secondLineCount: countLineSyllables(['writable', 'best', 'prosing'], wordSyllableIndex),
+  //       thirdLineCount: countLineSyllables(['writable', 'prosing'], wordSyllableIndex),
+  //     };
+
+  //     res.status(200).json({
+  //       payload: haikuSyllablesCount,
+  //       timestamp: Date.now()
+  //     });
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //   });
+
+  Word.find({ word: [...firstVerse, ...secondVerse, ...thirdVerse]})
+    .then(words => {
+      let wordSyllableIndex = {};
+      words.forEach(wordSyllable => {
+        const { word, syllables } = wordSyllable;
+        wordSyllableIndex[word] = syllables;
+      });
+
+      const haikuSyllablesCount = {
+        firstVerseCount: countVerseSyllables(firstVerse, wordSyllableIndex),
+        secondVerseCount: countVerseSyllables(secondVerse, wordSyllableIndex),
+        thirdVerseCount: countVerseSyllables(thirdVerse, wordSyllableIndex),
+      };
+
+      res.status(200).json({
+        payload: haikuSyllablesCount,
+        timestamp: Date.now()
+      });
+    })
+    .catch(error => {
+      res.status(500).json({
+        payload: error,
+        timestamp: Date.now()
+      });
+    });
 };
 
-exports.writeSyllableDictionary = (req, res, next) => {
+exports.uploadSyllablesToDictionary = (req, res, next) => {
   let count = 0;
   jsonData.forEach(data => {
     let { word, syllables} = data;
