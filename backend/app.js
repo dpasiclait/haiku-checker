@@ -34,7 +34,7 @@ app.use((req, res, next) => {
     'Origin, X-Requested-With, Content-Type, Accept');
   // Defines which types of requests clients are allowed to send
   res.setHeader('Access-Control-Allow-Methods',
-    'GET, OPTIONS');
+    'GET, POST, OPTIONS');
 
   // Informs app to continue to the next process
   next();

@@ -2,29 +2,58 @@
 
 <mat-card>
   <div id="indicators">
-    <div class="indicator mat-headline">0</div>
+    <div class="indicator mat-headline">{{firstCount}}</div>
 
     <span class="spacer"></span>
 
-    <div class="indicator mat-headline">0</div>
+    <div class="indicator mat-headline">{{secondCount}}</div>
 
     <span class="spacer"></span>
 
-    <div class="indicator mat-headline">0</div>
+    <div class="indicator mat-headline">{{thirdCount}}</div>
   </div>
 
-  <form>
+  <form #haikuForm="ngForm" (submit)="checkHaiku(haikuForm)">
     <mat-form-field>
-      <input matInput type="text" placeholder="This is the first line">
+      <input
+        matInput
+        type="text"
+        placeholder="This is the first line"
+        name="firstVerse" ngModel
+        #firstInput="ngModel"
+        required>
+      <mat-error *ngIf="firstInput.invalid">Please insert a verse</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="followed by the second line">
+      <input
+        matInput
+        type="text"
+        placeholder="followed by the second line"
+        name="secondVerse" ngModel
+        #secondInput="ngModel"
+        required>
+        <mat-error *ngIf="secondInput.invalid">Please insert a verse</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="with the third to end">
+      <input
+        matInput
+        type="text"
+        placeholder="with the third to end"
+        name="thirdVerse" ngModel
+        #thirdInput="ngModel"
+        required>
+        <mat-error *ngIf="thirdInput.invalid">Please insert a verse</mat-error>
     </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+    >
+      Check Haiku
+    </button>
   </form>
 </mat-card>
 

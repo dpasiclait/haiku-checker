@@ -11,12 +11,12 @@ export class HaikuService {
 
   constructor(private http: HttpClient) { }
 
-  getHaikuSyllablesCount(firstLine: string, secondLine: string, thirdLine: string): Observable<{ payload: SyllableCount, timestamp: number }> {
+  getHaikuSyllablesCount(firstVerse: string, secondVerse: string, thirdVerse: string): Observable<{ payload: SyllableCount, timestamp: number }> {
     const haiku: Haiku = {
-      firstLine,
-      secondLine,
-      thirdLine
-    }
+      firstVerse,
+      secondVerse,
+      thirdVerse
+    };
 
     return this.http.post<{ payload: SyllableCount, timestamp: number }>(this.BACKEND_URL, haiku);
   }

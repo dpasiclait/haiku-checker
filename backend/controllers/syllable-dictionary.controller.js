@@ -11,18 +11,24 @@ const countVerseSyllables = (line, wordSyllableIndex) => {
 }
 
 exports.verifyHaiku = (req, res, next) => {
-  const {
+  let {
     firstVerse,
     secondVerse,
     thirdVerse
   } = req.body;
+  console.log('\nthis is the body\n', req.body);
 
-  if (!firstVerse || !secondVerse || !thirdVerse) {
+  if (
+    !firstVerse || firstVerse === '' ||
+    !secondVerse || secondVerse === '' ||
+    !thirdVerse || thirdVerse === ''
+  ) {
     return res.status(400).json({
       payload: 'At least one verse is missing',
       timestamp: Date.now()
     });
   }
+  console.log(firstVerse);
 
   firstVerse = firstVerse.toLocaleLowerCase().split(' ');
   secondVerse = secondVerse.toLocaleLowerCase().split(' ');

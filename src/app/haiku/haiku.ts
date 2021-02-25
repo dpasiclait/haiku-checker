@@ -1,5 +1,5 @@
 export interface Haiku {
-  firstLine: string;
-  secondLine: string;
-  thirdLine: string;
+  firstVerse: string;
+  secondVerse: string;
+  thirdVerse: string;
 }
