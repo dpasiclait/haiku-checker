@@ -1,3 +1,5 @@
+const Word = require('../models/word.model');
+
 exports.findSyllables = (req, res, next) => {
   const {
     firstLine,

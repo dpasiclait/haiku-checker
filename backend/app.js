@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const syllableDictionaryRoute = require('./routes/syllable-dictionary.route');
 const app = express();
@@ -7,6 +8,15 @@ const app = express();
 // middleware used to accept json package request from clients
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+mongoose
+  .connect(`mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@cluster0.n2gdd.mongodb.net/${process.env.MONGO_ATLAS_DATABASE}`)
+  .then(() => {
+    console.log('\nConnection established!');
+  })
+  .catch(error => {
+    console.error(`\nERROR: ${error}`);
+  });
 
 // Setting up CORS Protocol for incoming client requests
 app.use((req, res, next) => {
