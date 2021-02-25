@@ -2,15 +2,34 @@
 
 <mat-card>
   <div id="indicators">
-    <div class="indicator mat-headline">{{firstCount}}</div>
+    <div
+      class="mat-headline"
+      [ngClass]="{
+        'indicator-correct': (firstCount === 0 || firstCount === 5),
+        'indicator-incorrect': (firstCount != 0 && firstCount != 5)
+      }">
+      {{firstCount}}
+    </div>
 
     <span class="spacer"></span>
 
-    <div class="indicator mat-headline">{{secondCount}}</div>
+    <div class="mat-headline"
+      [ngClass]="{
+        'indicator-correct': (secondCount === 0 || secondCount === 7),
+        'indicator-incorrect': (secondCount != 0 && secondCount != 7)
+      }">
+      {{secondCount}}
+    </div>
 
     <span class="spacer"></span>
 
-    <div class="indicator mat-headline">{{thirdCount}}</div>
+    <div class="mat-headline"
+      [ngClass]="{
+        'indicator-correct': (thirdCount === 0 || thirdCount === 5),
+        'indicator-incorrect': (thirdCount != 0 && thirdCount != 5)
+      }">
+      {{thirdCount}}
+    </div>
   </div>
 
   <form #haikuForm="ngForm" (submit)="checkHaiku(haikuForm)">

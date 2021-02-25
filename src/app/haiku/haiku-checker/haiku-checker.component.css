@@ -7,10 +7,6 @@ h2 {
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
 }
 
-/* mat-card {
-  background-color: #ffd633;
-} */
-
 mat-form-field {
   display: block;
   width: 50%;
@@ -23,12 +19,21 @@ mat-form-field {
   text-align: center;
 }
 
-.indicator {
+.indicator-correct {
   width: 10%;
   display: inline-block;
   padding: 1rem 1rem;
   background-color: #ffd633;
   color: #3a243b;
+  box-shadow: 5px 5px 4px #9b619e;
+}
+
+.indicator-incorrect {
+  width: 10%;
+  display: inline-block;
+  padding: 1rem 1rem;
+  background-color: rgb(207, 74, 74);
+  color: #ffd633;
   box-shadow: 5px 5px 4px #9b619e;
 }
 
