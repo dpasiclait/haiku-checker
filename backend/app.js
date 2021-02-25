@@ -1,4 +1,5 @@
 const express = require('express');
+const Path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -8,9 +9,13 @@ const app = express();
 // middleware used to accept json package request from clients
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(Path.join(__dirname, 'resources')));
 
 mongoose
-  .connect(`mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@cluster0.n2gdd.mongodb.net/${process.env.MONGO_ATLAS_DATABASE}`)
+  .connect(
+    `mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@cluster0.n2gdd.mongodb.net/${process.env.MONGO_ATLAS_DATABASE}`,
+    {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 5000, useNewUrlParser: true, useUnifiedTopology: true}
+  )
   .then(() => {
     console.log('\nConnection established!');
   })
