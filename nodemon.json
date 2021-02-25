@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATLAS_PASSWORD": "",
+    "MONGO_ATLAS_DATABASE": "haiku-checker"
+  }
+}
