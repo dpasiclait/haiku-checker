@@ -10,3 +10,12 @@ exports.findSyllables = (req, res, next) => {
     timestamp: Date.now()
   });
 };
+
+
+exports.writeSyllableDictionary = (req, res, next) => {
+
+  res.status(200).json({
+    payload: 'Dictionary filled',
+    timestamp: Date.now()
+  });
+}
