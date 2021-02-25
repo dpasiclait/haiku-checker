@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularMaterialModule } from './angular-material.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     BrowserAnimationsModule,
     BrowserModule,
     HaikuModule,
+    HttpClientModule,
     NoopAnimationsModule
   ],
   providers: [],

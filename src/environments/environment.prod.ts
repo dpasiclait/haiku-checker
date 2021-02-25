@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'domain_name_here/api/syllable_dictionary'
 };
