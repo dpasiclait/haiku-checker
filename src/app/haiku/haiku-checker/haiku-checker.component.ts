@@ -21,7 +21,11 @@ export class HaikuCheckerComponent {
 
     const { firstVerse, secondVerse, thirdVerse } = form.value;
 
-    this.haikuService.getHaikuSyllablesCount(firstVerse, secondVerse, thirdVerse)
+    this.haikuService.getHaikuSyllablesCount(
+      firstVerse.replace(/\s+/g,' ').trim(),
+      secondVerse.replace(/\s+/g,' ').trim(),
+      thirdVerse.replace(/\s+/g,' ').trim()
+    )
       .subscribe(response => {
         const {
           firstVerseCount,
