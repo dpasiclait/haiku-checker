@@ -19,23 +19,43 @@ export class HaikuCheckerComponent {
   checkHaiku(form: NgForm) {
     if (form.invalid) { return; };
 
-    const { firstVerse, secondVerse, thirdVerse } = form.value;
+    let { firstVerse, secondVerse, thirdVerse } = form.value;
 
     this.haikuService.getHaikuSyllablesCount(
       firstVerse.replace(/\s+/g,' ').trim(),
       secondVerse.replace(/\s+/g,' ').trim(),
       thirdVerse.replace(/\s+/g,' ').trim()
-    )
-      .subscribe(response => {
+    ).subscribe(response => {
         const {
           firstVerseCount,
           secondVerseCount,
           thirdVerseCount,
+          unknownWords,
         }: SyllableCount = response.payload;
 
         this.firstCount = firstVerseCount;
         this.secondCount = secondVerseCount;
         this.thirdCount = thirdVerseCount;
+
+        if (unknownWords && unknownWords.length > 0) {
+          let message = 'the following words are not recognized by our dictionary and will be removed:\n';
+
+          unknownWords.forEach(word => {
+            message += `${word}\n`;
+
+            firstVerse = firstVerse.replace(word,'').replace(/\s+/g,' ').trim();
+            secondVerse = secondVerse.replace(word,'').replace(/\s+/g,' ').trim();
+            thirdVerse = thirdVerse.replace(word,'').replace(/\s+/g,' ').trim();
+          });
+
+          form.setValue({
+            'firstVerse': firstVerse,
+            'secondVerse': secondVerse,
+            'thirdVerse': thirdVerse
+          });
+
+          alert(message);
+        }
       });
   }
 }

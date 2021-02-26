@@ -1,13 +1,21 @@
 const Word = require('../models/word.model');
 const jsonData = require('../resources/syllables.json');
 
-const countVerseSyllables = (line, wordSyllableIndex) => {
+const countVerseSyllables = (verse, wordSyllableIndex) => {
   let syllableCount = 0;
-  line.forEach(word => {
-    syllableCount += wordSyllableIndex[word];
+  const unrecognizedWords = []
+  verse.forEach(word => {
+    if (wordSyllableIndex[word]) {
+      syllableCount += wordSyllableIndex[word];
+    } else {
+      unrecognizedWords.push(word);
+    }
   });
 
-  return syllableCount;
+  return {
+    syllableCount,
+    unrecognizedWords
+  };
 }
 
 exports.verifyHaiku = (req, res, next) => {
@@ -28,7 +36,6 @@ exports.verifyHaiku = (req, res, next) => {
       timestamp: Date.now()
     });
   }
-  console.log(firstVerse);
 
   firstVerse = firstVerse.toLocaleLowerCase().split(' ');
   secondVerse = secondVerse.toLocaleLowerCase().split(' ');
@@ -65,10 +72,17 @@ exports.verifyHaiku = (req, res, next) => {
         wordSyllableIndex[word] = syllables;
       });
 
+      const { syllableCount: firstVerseCount, unrecognizedWords: missingInFirstVerse } = countVerseSyllables(firstVerse, wordSyllableIndex);
+      const { syllableCount: secondVerseCount, unrecognizedWords: missingInSecondVerse } = countVerseSyllables(secondVerse, wordSyllableIndex);
+      const { syllableCount: thirdVerseCount, unrecognizedWords: missingInThirdVerse } = countVerseSyllables(thirdVerse, wordSyllableIndex);
+
+      const unknownWords = missingInFirstVerse.concat(missingInSecondVerse, missingInThirdVerse);
+      console.log(unknownWords);
       const haikuSyllablesCount = {
-        firstVerseCount: countVerseSyllables(firstVerse, wordSyllableIndex),
-        secondVerseCount: countVerseSyllables(secondVerse, wordSyllableIndex),
-        thirdVerseCount: countVerseSyllables(thirdVerse, wordSyllableIndex),
+        firstVerseCount,
+        secondVerseCount,
+        thirdVerseCount,
+        unknownWords
       };
 
       res.status(200).json({
