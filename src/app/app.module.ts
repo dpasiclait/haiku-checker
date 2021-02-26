@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HaikuModule } from './haiku/haiku.module';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    ErrorComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     AngularMaterialModule,
@@ -26,6 +28,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     NoopAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { MatDialog } from "@angular/material/dialog";
+import { ErrorComponent } from "src/app/error/error.component";
 import { HaikuService } from "../haiku.service";
 import { SyllableCount } from "../syllable-count";
 
@@ -13,7 +15,10 @@ export class HaikuCheckerComponent {
   secondCount: number = 0;
   thirdCount: number = 0;
 
-  constructor(private haikuService: HaikuService) { }
+  constructor(
+    private haikuService: HaikuService,
+    private dialog: MatDialog
+  ) { }
 
   // placers two writable best prosing
   checkHaiku(form: NgForm) {
@@ -38,10 +43,10 @@ export class HaikuCheckerComponent {
         this.thirdCount = thirdVerseCount;
 
         if (unknownWords && unknownWords.length > 0) {
-          let message = 'the following words are not recognized by our dictionary and will be removed:\n';
+          let message = 'the following words are not recognized by our dictionary and will be removed from your haiku:\n';
 
           unknownWords.forEach(word => {
-            message += `${word}\n`;
+            message += `${word} `;
 
             firstVerse = firstVerse.replace(word,'').replace(/\s+/g,' ').trim();
             secondVerse = secondVerse.replace(word,'').replace(/\s+/g,' ').trim();
@@ -54,7 +59,7 @@ export class HaikuCheckerComponent {
             'thirdVerse': thirdVerse
           });
 
-          alert(message);
+          this.dialog.open(ErrorComponent, { data: { message } });
         }
       });
   }
