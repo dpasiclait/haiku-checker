@@ -24,7 +24,6 @@ exports.verifyHaiku = (req, res, next) => {
     secondVerse,
     thirdVerse
   } = req.body;
-  console.log('\nthis is the body\n', req.body);
 
   if (
     !firstVerse || firstVerse === '' ||
@@ -40,29 +39,6 @@ exports.verifyHaiku = (req, res, next) => {
   firstVerse = firstVerse.toLocaleLowerCase().split(' ');
   secondVerse = secondVerse.toLocaleLowerCase().split(' ');
   thirdVerse = thirdVerse.toLocaleLowerCase().split(' ');
-
-  // Word.find({ word: ['placers', 'two', 'writable', 'best', 'prosing']})
-  //   .then(words => {
-  //     let wordSyllableIndex = {};
-  //     words.forEach(wordSyllable => {
-  //       const { word, syllables } = wordSyllable;
-  //       wordSyllableIndex[word] = syllables;
-  //     });
-
-  //     const haikuSyllablesCount = {
-  //       firstLineCount: countLineSyllables(['placers', 'two', 'prosing'], wordSyllableIndex),
-  //       secondLineCount: countLineSyllables(['writable', 'best', 'prosing'], wordSyllableIndex),
-  //       thirdLineCount: countLineSyllables(['writable', 'prosing'], wordSyllableIndex),
-  //     };
-
-  //     res.status(200).json({
-  //       payload: haikuSyllablesCount,
-  //       timestamp: Date.now()
-  //     });
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   });
 
   Word.find({
       word: [...firstVerse, ...secondVerse, ...thirdVerse]
@@ -91,7 +67,7 @@ exports.verifyHaiku = (req, res, next) => {
       } = countVerseSyllables(thirdVerse, wordSyllableIndex);
 
       const unknownWords = missingInFirstVerse.concat(missingInSecondVerse, missingInThirdVerse);
-      console.log(unknownWords);
+
       const haikuSyllablesCount = {
         firstVerseCount,
         secondVerseCount,
@@ -114,11 +90,13 @@ exports.verifyHaiku = (req, res, next) => {
 
 exports.uploadSyllablesToDictionary = (req, res, next) => {
   let count = 0;
-  jsonData.forEach(data => {
-    let {
-      word,
-      syllables
-    } = data;
+  jsonData.forEach(({
+    word,
+    syllables}) => {
+    // let {
+    //   word,
+    //   syllables
+    // } = data;
 
     let newWord = new Word({
       word: word.toLocaleLowerCase(),
