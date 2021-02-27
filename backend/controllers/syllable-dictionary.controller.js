@@ -64,17 +64,31 @@ exports.verifyHaiku = (req, res, next) => {
   //     console.log(error);
   //   });
 
-  Word.find({ word: [...firstVerse, ...secondVerse, ...thirdVerse]})
+  Word.find({
+      word: [...firstVerse, ...secondVerse, ...thirdVerse]
+    })
     .then(words => {
       let wordSyllableIndex = {};
       words.forEach(wordSyllable => {
-        const { word, syllables } = wordSyllable;
+        const {
+          word,
+          syllables
+        } = wordSyllable;
         wordSyllableIndex[word] = syllables;
       });
 
-      const { syllableCount: firstVerseCount, unrecognizedWords: missingInFirstVerse } = countVerseSyllables(firstVerse, wordSyllableIndex);
-      const { syllableCount: secondVerseCount, unrecognizedWords: missingInSecondVerse } = countVerseSyllables(secondVerse, wordSyllableIndex);
-      const { syllableCount: thirdVerseCount, unrecognizedWords: missingInThirdVerse } = countVerseSyllables(thirdVerse, wordSyllableIndex);
+      const {
+        syllableCount: firstVerseCount,
+        unrecognizedWords: missingInFirstVerse
+      } = countVerseSyllables(firstVerse, wordSyllableIndex);
+      const {
+        syllableCount: secondVerseCount,
+        unrecognizedWords: missingInSecondVerse
+      } = countVerseSyllables(secondVerse, wordSyllableIndex);
+      const {
+        syllableCount: thirdVerseCount,
+        unrecognizedWords: missingInThirdVerse
+      } = countVerseSyllables(thirdVerse, wordSyllableIndex);
 
       const unknownWords = missingInFirstVerse.concat(missingInSecondVerse, missingInThirdVerse);
       console.log(unknownWords);
@@ -101,7 +115,10 @@ exports.verifyHaiku = (req, res, next) => {
 exports.uploadSyllablesToDictionary = (req, res, next) => {
   let count = 0;
   jsonData.forEach(data => {
-    let { word, syllables} = data;
+    let {
+      word,
+      syllables
+    } = data;
 
     let newWord = new Word({
       word: word.toLocaleLowerCase(),

@@ -37,22 +37,28 @@ span.indent {
   box-shadow: 5px 5px 4px #9b619e;
 }
 
-.right-card{
+.right-card {
   margin-left: 10%;
 }
-.right-card mat-card-title, .right-card mat-card-subtitle {
+
+.right-card mat-card-title,
+.right-card mat-card-subtitle {
   text-align: right;
 }
+
 .right-card mat-card-content {
   text-align: left;
 }
 
-.left-card{
+.left-card {
   margin-left: 10px;
 }
-.left-card mat-card-title, .left-card mat-card-subtitle {
+
+.left-card mat-card-title,
+.left-card mat-card-subtitle {
   text-align: left;
 }
+
 .left-card mat-card-content {
   text-align: right;
 }
@@ -71,7 +77,7 @@ span.indent {
   margin: auto;
 }
 
-.cutting-words{
+.cutting-words {
   color: #9b619e;
   font-size: medium;
   margin: auto 10% auto auto;
