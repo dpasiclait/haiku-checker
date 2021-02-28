@@ -50,8 +50,8 @@ import {
     HttpClientModule,
     NoopAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers      : [],
+  bootstrap      : [AppComponent],
   entryComponents: [ErrorComponent]
 })
 export class AppModule {}

@@ -1,8 +1,8 @@
-const Word = require('../models/word.model');
+const Word     = require('../models/word.model');
 const jsonData = require('../resources/syllables.json');
 
 const countVerseSyllables = (verse, wordSyllableIndex) => {
-  let syllableCount = 0;
+  let   syllableCount     = 0;
   const unrecognizedWords = []
   verse.forEach(word => {
     if (wordSyllableIndex[word]) {
@@ -26,19 +26,19 @@ exports.verifyHaiku = (req, res, next) => {
   } = req.body;
 
   if (
-    !firstVerse || firstVerse === '' ||
+    !firstVerse  || firstVerse === '' ||
     !secondVerse || secondVerse === '' ||
-    !thirdVerse || thirdVerse === ''
+    !thirdVerse  || thirdVerse === ''
   ) {
     return res.status(400).json({
-      payload: 'At least one verse is missing',
+      payload  : 'At least one verse is missing',
       timestamp: Date.now()
     });
   }
 
-  firstVerse = firstVerse.toLocaleLowerCase().split(' ');
+  firstVerse  = firstVerse.toLocaleLowerCase().split(' ');
   secondVerse = secondVerse.toLocaleLowerCase().split(' ');
-  thirdVerse = thirdVerse.toLocaleLowerCase().split(' ');
+  thirdVerse  = thirdVerse.toLocaleLowerCase().split(' ');
 
   Word.find({
       word: [...firstVerse, ...secondVerse, ...thirdVerse]
@@ -54,15 +54,15 @@ exports.verifyHaiku = (req, res, next) => {
       });
 
       const {
-        syllableCount: firstVerseCount,
+        syllableCount    : firstVerseCount,
         unrecognizedWords: missingInFirstVerse
       } = countVerseSyllables(firstVerse, wordSyllableIndex);
       const {
-        syllableCount: secondVerseCount,
+        syllableCount    : secondVerseCount,
         unrecognizedWords: missingInSecondVerse
       } = countVerseSyllables(secondVerse, wordSyllableIndex);
       const {
-        syllableCount: thirdVerseCount,
+        syllableCount    : thirdVerseCount,
         unrecognizedWords: missingInThirdVerse
       } = countVerseSyllables(thirdVerse, wordSyllableIndex);
 
@@ -76,13 +76,13 @@ exports.verifyHaiku = (req, res, next) => {
       };
 
       res.status(200).json({
-        payload: haikuSyllablesCount,
+        payload  : haikuSyllablesCount,
         timestamp: Date.now()
       });
     })
     .catch(error => {
       res.status(500).json({
-        payload: error,
+        payload  : error,
         timestamp: Date.now()
       });
     });
@@ -113,7 +113,7 @@ exports.uploadSyllablesToDictionary = (req, res, next) => {
   });
 
   res.status(200).json({
-    payload: 'Dictionary filled',
+    payload  : 'Dictionary filled',
     timestamp: Date.now()
   });
 }

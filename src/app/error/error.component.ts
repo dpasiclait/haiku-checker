@@ -8,7 +8,7 @@ import {
 
 @Component({
   templateUrl: './error.component.html',
-  styleUrls: ['./error.component.css']
+  styleUrls  : ['./error.component.css']
 })
 export class ErrorComponent {
 

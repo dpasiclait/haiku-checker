@@ -26,7 +26,7 @@ export class HaikuService {
   constructor(private http: HttpClient) {}
 
   getHaikuSyllablesCount(firstVerse: string, secondVerse: string, thirdVerse: string): Observable < {
-    payload: SyllableCount,
+    payload  : SyllableCount,
     timestamp: number
   } > {
     const haiku: Haiku = {
@@ -36,7 +36,7 @@ export class HaikuService {
     };
 
     return this.http.post < {
-      payload: SyllableCount,
+      payload  : SyllableCount,
       timestamp: number
     } > (this.BACKEND_URL, haiku);
   }

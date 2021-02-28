@@ -8,7 +8,7 @@ const wordSchema = mongoose.Schema({
     unique: true
   },
   syllables: {
-    type: Number,
+    type    : Number,
     required: true
   }
 });

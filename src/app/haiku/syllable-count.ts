@@ -1,6 +1,6 @@
 export interface SyllableCount {
-  firstVerseCount: number;
+  firstVerseCount : number;
   secondVerseCount: number;
-  thirdVerseCount: number;
-  unknownWords: string[];
+  thirdVerseCount : number;
+  unknownWords    : string[];
 }

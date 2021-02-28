@@ -13,15 +13,15 @@ import {
 } from "./haiku/haiku-facts/haiku-facts.component";
 
 const routes: Routes = [{
-    path: '',
+    path     : '',
     component: HaikuCheckerComponent
   },
   {
-    path: 'facts',
+    path     : 'facts',
     component: HaikuFactsComponent
   },
   {
-    path: 'about',
+    path        : 'about',
     loadChildren: () => import('./about/about.module')
       .then(module => module.AboutModule),
   },

@@ -1,10 +1,10 @@
-const express = require('express');
-const Path = require('path');
+const express    = require('express');
+const Path       = require('path');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const mongoose   = require('mongoose');
 
 const syllableDictionaryRoute = require('./routes/syllable-dictionary.route');
-const app = express();
+const app                     = express();
 
 // middleware used to accept json package request from clients
 app.use(bodyParser.json());
@@ -13,13 +13,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(Path.join(__dirname, 'resources')));
 
+// API to manage MongoDB cloud database
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_ATLAS_USERNAME}:${process.env.MONGO_ATLAS_PASSWORD}@cluster0.n2gdd.mongodb.net/${process.env.MONGO_ATLAS_DATABASE}`, {
-      poolSize: 10,
-      bufferMaxEntries: 0,
-      reconnectTries: 5000,
-      useNewUrlParser: true,
+      poolSize          : 10,
+      bufferMaxEntries  : 0,
+      reconnectTries    : 5000,
+      useNewUrlParser   : true,
       useUnifiedTopology: true
     }
   )
@@ -47,6 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// Setting up all recognized paths for this REST application
 app.use('/api/syllable_dictionary', syllableDictionaryRoute);
 
 module.exports = app;

@@ -4,7 +4,7 @@ import {
 
 @Component({
   templateUrl: './haiku-facts.component.html',
-  styleUrls: ['./haiku-facts.component.css']
+  styleUrls  : ['./haiku-facts.component.css']
 })
 export class HaikuFactsComponent {
 

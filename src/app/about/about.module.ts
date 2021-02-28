@@ -16,7 +16,7 @@ import {
 
 @NgModule({
   declarations: [AboutComponent],
-  imports: [
+  imports     : [
     AboutRoutingModule,
     CommonModule,
     RouterModule

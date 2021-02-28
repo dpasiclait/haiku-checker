@@ -1,23 +1,23 @@
 mat-card-title {
-  margin: auto;
-  color: #3a243b;
+  margin     : auto;
+  color      : #3a243b;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size: x-large;
+  font-size  : x-large;
   font-weight: bold;
 }
 
 mat-card-subtitle {
-  margin: auto 5% auto 5%;
-  color: #9b619e;
+  margin     : auto 5% auto 5%;
+  color      : #9b619e;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size: x-large;
+  font-size  : x-large;
 }
 
 mat-card-content {
-  margin: auto;
-  color: #3a243b;
+  margin     : auto;
+  color      : #3a243b;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size: x-large;
+  font-size  : x-large;
 }
 
 span.indent {
@@ -25,15 +25,15 @@ span.indent {
 }
 
 .mat-display-1 {
-  width: 80%;
-  text-align: justify;
+  width      : 80%;
+  text-align : justify;
   padding-top: 1rem;
-  font-size: xx-large;
+  font-size  : xx-large;
 }
 
 .content {
   margin-top: 1rem;
-  width: 80%;
+  width     : 80%;
   box-shadow: 5px 5px 4px #9b619e;
 }
 
@@ -64,23 +64,23 @@ span.indent {
 }
 
 .scroll {
-  height: 95%;
+  height          : 95%;
   background-color: #ffd633;
-  padding: 15px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  box-shadow: 5px 5px 4px #9b619e;
+  padding         : 15px;
+  overflow-x      : hidden;
+  overflow-y      : auto;
+  box-shadow      : 5px 5px 4px #9b619e;
 }
 
 .indent {
   text-indent: 5%;
-  margin: auto;
+  margin     : auto;
 }
 
 .cutting-words {
-  color: #9b619e;
+  color    : #9b619e;
   font-size: medium;
-  margin: auto 10% auto auto;
+  margin   : auto 10% auto auto;
 }
 
 .spacer {
@@ -89,6 +89,6 @@ span.indent {
 
 .italicized {
   font-weight: bold;
-  font-style: italic;
-  color: #9b619e;
+  font-style : italic;
+  color      : #9b619e;
 }

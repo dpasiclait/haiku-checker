@@ -18,18 +18,18 @@ import {
 } from "../syllable-count";
 
 @Component({
-  selector: 'app-haiku-checker',
+  selector   : 'app-haiku-checker',
   templateUrl: './haiku-checker.component.html',
-  styleUrls: ['./haiku-checker.component.css']
+  styleUrls  : ['./haiku-checker.component.css']
 })
 export class HaikuCheckerComponent {
-  firstCount: number = 0;
+  firstCount : number = 0;
   secondCount: number = 0;
-  thirdCount: number = 0;
+  thirdCount : number = 0;
 
   constructor(
     private haikuService: HaikuService,
-    private dialog: MatDialog
+    private dialog      : MatDialog
   ) {}
 
   // placers two writable best prosing
@@ -56,9 +56,9 @@ export class HaikuCheckerComponent {
         unknownWords,
       }: SyllableCount = response.payload;
 
-      this.firstCount = firstVerseCount;
+      this.firstCount  = firstVerseCount;
       this.secondCount = secondVerseCount;
-      this.thirdCount = thirdVerseCount;
+      this.thirdCount  = thirdVerseCount;
 
       if (unknownWords && unknownWords.length > 0) {
         let message = 'the following words are not recognized by our dictionary and will be removed from your haiku:\n';
@@ -66,15 +66,15 @@ export class HaikuCheckerComponent {
         unknownWords.forEach(word => {
           message += `${word} `;
 
-          firstVerse = firstVerse.replace(word, '').replace(/\s+/g, ' ').trim();
+          firstVerse  = firstVerse.replace(word, '').replace(/\s+/g, ' ').trim();
           secondVerse = secondVerse.replace(word, '').replace(/\s+/g, ' ').trim();
-          thirdVerse = thirdVerse.replace(word, '').replace(/\s+/g, ' ').trim();
+          thirdVerse  = thirdVerse.replace(word, '').replace(/\s+/g, ' ').trim();
         });
 
         form.setValue({
-          'firstVerse': firstVerse,
+          'firstVerse' : firstVerse,
           'secondVerse': secondVerse,
-          'thirdVerse': thirdVerse
+          'thirdVerse' : thirdVerse
         });
 
         this.dialog.open(ErrorComponent, {

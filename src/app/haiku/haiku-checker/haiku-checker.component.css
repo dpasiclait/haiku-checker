@@ -1,42 +1,42 @@
 h2 {
-  width: 80%;
-  text-align: justify;
-  margin: auto;
+  width      : 80%;
+  text-align : justify;
+  margin     : auto;
   padding-top: 15%;
-  color: #3a243b;
+  color      : #3a243b;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
 }
 
 mat-form-field {
-  display: block;
-  width: 50%;
+  display     : block;
+  width       : 50%;
   padding-left: 40%;
 }
 
 #indicators {
-  width: 100%;
-  margin: 0 auto;
+  width     : 100%;
+  margin    : 0 auto;
   text-align: center;
 }
 
 .indicator-correct {
-  width: 10%;
-  display: inline-block;
-  padding: 1rem 1rem;
+  width           : 10%;
+  display         : inline-block;
+  padding         : 1rem 1rem;
   background-color: #ffd633;
-  color: #3a243b;
-  box-shadow: 5px 5px 4px #9b619e;
-  border-radius: 50%;
+  color           : #3a243b;
+  box-shadow      : 5px 5px 4px #9b619e;
+  border-radius   : 50%;
 }
 
 .indicator-incorrect {
-  width: 10%;
-  display: inline-block;
-  padding: 1rem 1rem;
+  width           : 10%;
+  display         : inline-block;
+  padding         : 1rem 1rem;
   background-color: rgb(207, 74, 74);
-  color: #ffd633;
-  box-shadow: 5px 5px 4px #9b619e;
-  border-radius: 50%;
+  color           : #ffd633;
+  box-shadow      : 5px 5px 4px #9b619e;
+  border-radius   : 50%;
 }
 
 .spacer {

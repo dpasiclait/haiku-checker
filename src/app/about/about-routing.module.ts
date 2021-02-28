@@ -10,7 +10,7 @@ import {
 } from "./about.component";
 
 const routes: Routes = [{
-  path: '',
+  path     : '',
   component: AboutComponent
 }]
 

@@ -1,10 +1,10 @@
 h1 {
-  color: #3a243b;
+  color      : #3a243b;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
 }
 
 p {
-  color: #9b619e;
+  color      : #9b619e;
   font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size: larger;
+  font-size  : larger;
 }
