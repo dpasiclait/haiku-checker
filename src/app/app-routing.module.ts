@@ -5,6 +5,7 @@ import {
   RouterModule,
   Routes
 } from "@angular/router";
+
 import {
   HaikuCheckerComponent
 } from "./haiku/haiku-checker/haiku-checker.component";
@@ -20,6 +21,7 @@ const routes: Routes = [{
     path     : 'facts',
     component: HaikuFactsComponent
   },
+  // Lazy Loading
   {
     path        : 'about',
     loadChildren: () => import('./about/about.module')
