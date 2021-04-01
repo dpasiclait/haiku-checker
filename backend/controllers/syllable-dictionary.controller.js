@@ -89,14 +89,13 @@ exports.verifyHaiku = (req, res, next) => {
 };
 
 exports.uploadSyllablesToDictionary = (req, res, next) => {
+
+  console.log(`Saving ${jsonData.length} words!`);
+
   let count = 0;
   jsonData.forEach(({
     word,
     syllables}) => {
-    // let {
-    //   word,
-    //   syllables
-    // } = data;
 
     let newWord = new Word({
       word: word.toLocaleLowerCase(),
