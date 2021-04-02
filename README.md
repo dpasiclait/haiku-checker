@@ -13,31 +13,40 @@ This project is a small MEAN Stack project using:
 The current logic (as of version 1.0.0) is the following:
   1. The backend api server receives incoming requests from the frontend to process the haiku. With the three lines as inputs in the request body, each verse of the poem is subsequently evaluated.
   2. One by one the lines of verse are split into an array of the words they contain. 
+
     ```javascript
     firstVerse  = firstVerse.toLocaleLowerCase().split(' ');
     secondVerse = secondVerse.toLocaleLowerCase().split(' ');
     thirdVerse  = thirdVerse.toLocaleLowerCase().split(' ');
     ```
+
   3. Given these arrays, the backend fetches from the database the syllable count for each word encountered, then creating a tiny _**wordSyllableIndex**_ as reference when tallying up the line counts.
+
     ```javascript
     Word.find({
       word: [...firstVerse, ...secondVerse, ...thirdVerse]
     });
     ``` 
+
   4. With the help of a private auxiliary function, each verse is sent along with the index to return the sum of all syllables.
+
     ```javascript
     countVerseSyllables(firstVerse, wordSyllableIndex);
     countVerseSyllables(secondVerse, wordSyllableIndex);
     countVerseSyllables(thirdVerse, wordSyllableIndex);
     ```
+
     1. The output of this function also includes any words that are not registered within the database (see Author's Note).
+      
       ```javascript
       {
         syllableCount,
         unrecognizedWords
       }
       ```
+
   5. Once processed, the output of the evaluation is returned to the frontend client.
+    
     ```javascript
     {
       payload  : {
@@ -49,6 +58,7 @@ The current logic (as of version 1.0.0) is the following:
       timestamp: Date.now()
     }
     ```
+    
   6. Finally, the frontend client displays the verses' respective syllable counts, removing any _**unknownWords**_ and informing the user of said changes.
 
 ## Author's Note
