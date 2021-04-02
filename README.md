@@ -85,8 +85,8 @@ The current logic (as of version 1.0.0) is the following:
 Hopefully after deployment of the current version, I can implement the simplified method of using regular expressions to count syllables. Also, I would like to provide users the ability to post their own haiku for others to see.
 
 ## Resources
-- Angular Material Design for the frontend ui
-- Mongoose for database connection
+- [Angular Material Design](https://material.angular.io/) for the frontend ui
+- [Mongoose](https://mongoosejs.com/) for database connection
 
 ## Special Thanks
 1. [This generous github user](https://github.com/dwyl/english-words) and [This internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
