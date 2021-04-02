@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl    : 'domain_name_here/api/syllable_dictionary'
+  apiUrl    : 'http://haikucheckerserver-env-1.eba-cyiudbex.us-east-2.elasticbeanstalk.com/api/syllable_dictionary'
 };
