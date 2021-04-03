@@ -84,7 +84,7 @@ The current logic (as of version 1.0.0) is the following:
 
 - It's is not always recommended to forward your domain name with masking.
   - Many third party hosting services limit the functionalities of your web app when forwarding with masking is chosen, explained [in this forum](https://www.godaddy.com/community/Managing-Domains/Forward-w-Masking-Disables-Mobile-Website/td-p/7793) and [this article](https://support.strikingly.com/hc/en-us/articles/214364718-Fix-Problems-with-Masked-Forwarding):
-    - External links to secure website will be denied due to [cCSP frame-ancestors](https://content-security-policy.com/frame-ancestors/) issues;
+    - External links to secure website will be denied due to [CSP frame-ancestors](https://content-security-policy.com/frame-ancestors/) issues;
     - Responsive designs for mobile users are "disabled";
     - Interferes with search engine optimization;
     - May also interfere with other third party resources;
@@ -106,5 +106,5 @@ Hopefully after deployment of the current version, I can implement the simplifie
 - [Fontawesome v4.7.0](https://fontawesome.com/v4.7.0/get-started/) for .min.css and icon resources
 
 ## Special Thanks
-1. [This generous github user](https://github.com/dwyl/english-words) and [This internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
+1. [This generous github user](https://github.com/dwyl/english-words) and [this internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
 2. [How Many Syllables](https://www.howmanysyllables.com/) for the syllable counts.
