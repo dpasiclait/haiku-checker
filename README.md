@@ -1,8 +1,13 @@
-# HaikuChecker
+# HaikuChecker v1.0.1
 Verify the syllable count of your haiku
 
 ## Description
 With this web application, the headaches and troubles of writing a haiku with the correct syllable count is a thing of the past. No longer will the elusive 5-7-5 structure prevent you form passing your English Lit class. Turn in your assignment with the confidence of a 17th century Japanese poet... or the confidence of a highschooler looking for an easy A.
+
+## Bug Fixes
+### v1.0.1
+1. Script reference for fontawesome.js was replaced by link to incorporated stylesheet fontawesome.min.css within assets folder
+2. Although no code had to change for this bug, domain name forwarding with masking was disabled to allow external links to Github and LinkedIn to redirect without frame-ancestor rejections
 
 ## Interested In the Behind the Scenes
 This project is a small MEAN Stack project using:
@@ -15,9 +20,9 @@ The current logic (as of version 1.0.0) is the following:
 
   2. One by one the lines of verse are split into an array of the words they contain. 
  ```javascript
-  firstVerse  = firstVerse.toLocaleLowerCase().split(' ');
-  secondVerse = secondVerse.toLocaleLowerCase().split(' ');
-  thirdVerse  = thirdVerse.toLocaleLowerCase().split(' ');
+  firstVerse  = firstVerse.toLowerCase().split(' ');
+  secondVerse = secondVerse.toLowerCase().split(' ');
+  thirdVerse  = thirdVerse.toLowerCase().split(' ');
 ```
 
   3. Given these arrays, the backend fetches from the database the syllable count for each word encountered, then creating a tiny _**wordSyllableIndex**_ as reference when tallying up the line counts.
@@ -74,6 +79,17 @@ The current logic (as of version 1.0.0) is the following:
   - Thus, it is likely possible to translate them to computer logic. 
   - In fact, a certain website (see Special Thanks) that I have found can tell you the syllable count of any word, real or made up, with really great accuracy. Given that made up words are not rejected and are processed by the application without fail, it signifies that they are not using a static list/database/etc. of words, but instead, they are processed in vivo like any other word. 
 
+- Always best to include third party min.css files rather than relying on script url references in your html head. 
+  - Many small things can cause the link to malfunction and unable to retrieve the necessary styles, icons, animations, etc.
+
+- It's is not always recommended to forward your domain name with masking.
+  - Many third party hosting services limit the functionalities of your web app when forwarding with masking is chosen, explained [in this forum](https://www.godaddy.com/community/Managing-Domains/Forward-w-Masking-Disables-Mobile-Website/td-p/7793) and [this article](https://support.strikingly.com/hc/en-us/articles/214364718-Fix-Problems-with-Masked-Forwarding):
+    - External links to secure website will be denied due to [cCSP frame-ancestors](https://content-security-policy.com/frame-ancestors/) issues;
+    - Responsive designs for mobile users are "disabled";
+    - Interferes with search engine optimization;
+    - May also interfere with other third party resources;
+    - Prevents users from bookmarking or redirecting to your website 
+
 ### Limitations of The Current Method 
 1. Requires an unnecessary amount of space to have a list of "all" the words of the English dictionary.
 2. Not up-to-date with current words constantly originating from modern social settings or internet lingo.
@@ -85,8 +101,9 @@ The current logic (as of version 1.0.0) is the following:
 Hopefully after deployment of the current version, I can implement the simplified method of using regular expressions to count syllables. Also, I would like to provide users the ability to post their own haiku for others to see.
 
 ## Resources
-- [Angular Material Design](https://material.angular.io/) for the frontend ui
-- [Mongoose](https://mongoosejs.com/) for database connection
+- [Angular Material Design v11.2.1](https://material.angular.io/) for the frontend ui
+- [Mongoose v5.11.18](https://mongoosejs.com/) for database connection
+- [Fontawesome v4.7.0](https://fontawesome.com/v4.7.0/get-started/) for .min.css and icon resources
 
 ## Special Thanks
 1. [This generous github user](https://github.com/dwyl/english-words) and [This internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
