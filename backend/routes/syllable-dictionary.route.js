@@ -112,6 +112,7 @@ router.get('/upload_data', SyllableDictionaryController.uploadSyllablesToDiction
  *         description: Internal Server Error
 */
 router.post('/', SyllableDictionaryController.verifyHaiku);
+router.post('/test', SyllableDictionaryController.test);
 
 module.exports = router;
 
