@@ -1,6 +1,8 @@
 const Word     = require('../models/word.model');
 const jsonData = require('../resources/syllables.json');
 
+const SyllableDictionaryService = require('./syllable-dictionary.service');
+
 const countVerseSyllables = (verse, wordSyllableIndex) => {
   let   syllableCount     = 0;
   const unrecognizedWords = []
@@ -125,7 +127,7 @@ exports.test = (req, res, next) => {
   res.status(200).json({
     payload  : {
       wordSplitting: countSyllables(word.toLowerCase()),
-      vowelCounting: countKeyVowels(word.toLowerCase())
+      vowelCounting: SyllableDictionaryService.countSyllablesByCountingKeyVowels(word.toLowerCase())
     },
     timestamp: Date.now()
   });

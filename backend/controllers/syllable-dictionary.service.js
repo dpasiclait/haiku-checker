@@ -34,8 +34,6 @@ const A_E_I_O_U = new RegExp('a|e|i|o|u');
 const A_E_I_O_U_AND_SOMETIMES_Y = new RegExp('a|e|i|o|u|y');
 const CONSONANTS_INCLUDING_Y = new RegExp('[b-d]|[f-h]|[j-n]|[p-t]|[v-z]');
 const CONSONANTS_EXCLUDING_Y = new RegExp('[b-d]|[f-h]|[j-n]|[p-t]|v|w|x|z');
-
-
 exports.countSyllablesBySplittingWord = (word) => {
 
   if (word.length === 1) {
@@ -54,7 +52,6 @@ exports.countSyllablesBySplittingWord = (word) => {
     }
   });
 
-
   return syllableCount;
 };
 
@@ -67,80 +64,53 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
 
   numberOfKeyVowels = 0;
 
-  if (letters[0].match(A_E_I_O_U)) {
-    numberOfKeyVowels++;
-  }
-
-  if (letters[0] === 'y' && letters[1].match(CONSONANTS_EXCLUDING_Y)) {
+  if (does_word_start_with_a_vowel(letters[0], letters[1])) {
     numberOfKeyVowels++;
   }
 
   for (i = 1; i < letters.length; i++) {
-    if (letters[i].match(CONSONANTS_EXCLUDING_Y)){
-      continue;
-    }
 
-    if (letters[i] === 'e' && `${letters[i + 1]}${letters[i + 2]}`.match(new RegExp('tt|ll')) && letters[i + 3] === 'e' && letters[i + 4] === 'r') {
-      numberOfKeyVowels++;
-      i += 2;
-      continue;
-    }
-
-    if (letters[i] === 'e' && `${letters[i + 1]}${letters[i + 2]}`.match(new RegExp('tt|ll')) && letters[i + 3] === 'e') {
-      numberOfKeyVowels++;
-      i += 4;
-      continue;
-    }
-
-    if (letters[i - 2] ==='r' && letters[i - 1] === 'u' && letters[i] === 'i' && letters[i + 1].match(new RegExp('n|d'))) {
+    const substring3210 = `${letters[i - 3]}${letters[i - 2]}${letters[i - 1]}${letters[i]}`;
+    if ((i === letters.length - 1) && does_the_following_substring_follow_the_same_rule_as_the_word_mania(substring3210)) {
       numberOfKeyVowels++;
       continue;
     }
 
-    if (letters[i].match(A_E_I_O_U_AND_SOMETIMES_Y) && letters[i - 1] === 'u' && (letters[i - 2] !== 'c' && letters[i - 2] !== 'g' && letters[i - 2] !== 'k' && letters[i - 2] !== 'q' && letters[i - 2] !== 'r')) {
+    const substring210 = `${letters[i - 2]}${letters[i - 1]}${letters[i]}`;
+    const substring2101 = `${letters[i - 2]}${letters[i - 1]}${letters[i]}${letters[i + 1]}`;
+    if (
+      is_letter_a_consonant(letters[i]) ||
+      does_the_following_substring_follow_the_standard_i_o_n_rule(substring2101) ||
+      does_the_following_substring_follow_the_standard_n_i_rule(substring210)||
+      does_the_following_substring_follow_the_standard_p_n_e_u_rule(substring3210)
+    ) { continue; }
+
+    const substring01234 = `${letters[i]}${letters[i + 1]}${letters[i + 2]}${letters[i + 3]}${letters[i + 4]}`;
+    if (does_the_following_substring_follow_the_same_rule_as_the_word_better_or_teller(substring01234)) {
       numberOfKeyVowels++;
+      i += 2; // * skip to second e to count it as a key vowel
       continue;
     }
 
-    if (letters[i - 2]?.match(new RegExp('t|s|x|c')) && letters[i - 1] === 'i' && letters[i] === 'o' && letters[i + 1] === 'n') {
-      continue;
-    }
-
-    if (letters[i - 2] === 'n' && letters[i - 1] === 'i' && letters[i].match(new RegExp('a|o|u'))) {
-      continue;
-    }
-
-    if (letters[i - 1] === 'i' && letters[i].match(new RegExp('a|o|u'))) {
+    const substring0123 = `${letters[i]}${letters[i + 1]}${letters[i + 2]}${letters[i + 3]}`;
+    if (does_the_following_substring_follow_the_same_rule_as_the_word_belle_or_yvette(substring0123)) {
       numberOfKeyVowels++;
+      i += 4; // * skip pass the second e because it is a silent vowel
       continue;
     }
 
-    if ((i === letters.length - 1) && letters[i - 1] === 'o' && letters[i] === 'a') {
+    const substring10 = `${letters[i - 1]}${letters[i]}`;
+    const substring101 = `${letters[i - 1]}${letters[i]}${letters[i + 1]}`;
+    if (
+      does_the_following_substring_follow_the_special_i_vowel_rule(substring10) ||
+      does_following_substring_follow_the_special_o_vowel_rule(substring2101) ||
+      does_following_substring_follow_the_special_u_vowel_rule(substring2101) ||
+      does_following_substring_follow_the_special_z_o_rule(substring210) ||
+      does_following_substring_follow_the_special_z_o_o_rule(substring2101) ||
+      ((i === letters.length - 1) && does_following_substring_follow_the_special_o_a_vowels_rule(substring10)) ||
+      ((i === letters.length - 2) && does_following_substring_follow_the_special_o_a_h_ending_rule(substring101))
+    ) {
       numberOfKeyVowels++;
-      continue;
-    }
-
-    if ((i === letters.length - 2) && letters[i - 1] === 'o' && letters[i] === 'a' && letters[i + 1] === 'h') {
-      numberOfKeyVowels++;
-      continue;
-    }
-
-    if (letters[i - 2]?.match(new RegExp('z|c|s|x')) && letters[i - 1] === 'o' && letters[i].match(new RegExp('a|e|y')) && letters[i + 1] === 'n') {
-      numberOfKeyVowels++;
-      continue;
-    }
-
-    if (letters[i - 2] === 'z' && letters[i - 1] === 'o' && letters[i].match(new RegExp('a|e|y'))) {
-      numberOfKeyVowels++;
-      continue;
-    }
-
-    if (letters[i - 2] === 'z' && letters[i - 1] === 'o' && letters[i] === 'o' && letters[i + 1]?.match(new RegExp('l|t'))) {
-      numberOfKeyVowels++;
-      continue;
-    }
-
-    if (letters[i - 3] === 'p' && letters[i - 2] === 'n' && letters[i - 1] === 'e' && letters[i] === 'u') {
       continue;
     }
 
@@ -199,4 +169,64 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
   }
 
   return numberOfKeyVowels;
+}
+
+function does_word_start_with_a_vowel(firstLetter, followingLetter) {
+  return firstLetter.match(A_E_I_O_U) || firstLetter === 'y' && followingLetter.match(CONSONANTS_EXCLUDING_Y);
+}
+
+function does_the_following_substring_follow_the_same_rule_as_the_word_mania(substring) {
+  return substring.match(new RegExp('a[^aeiouy]i[aou]'));
+}
+
+function is_letter_a_consonant(letter) {
+  return letter.match(CONSONANTS_EXCLUDING_Y);
+}
+
+function does_the_following_substring_follow_the_standard_i_o_n_rule(substring) {
+  return substring.match(new RegExp('[cstx]ion'));
+}
+
+function does_the_following_substring_follow_the_standard_n_i_rule(substring) {
+  return substring.match(new RegExp('ni[aou]'));
+}
+
+function does_the_following_substring_follow_the_standard_p_n_e_u_rule(substring) {
+  return substring.match(new RegExp('pneu'));
+}
+
+function does_the_following_substring_follow_the_same_rule_as_the_word_better_or_teller(substring) {
+  return substring.match(new RegExp('eller|etter'));
+}
+
+function does_the_following_substring_follow_the_same_rule_as_the_word_belle_or_yvette(substring) {
+  return substring.match(new RegExp('elle|ette'));
+}
+
+function does_the_following_substring_follow_the_special_i_vowel_rule(substring) {
+  return substring.match(new RegExp('i[aou]'));
+}
+
+function does_following_substring_follow_the_special_o_vowel_rule(substring) {
+  return substring.match(new RegExp('[csxz]o[aey]n'));
+}
+
+function does_following_substring_follow_the_special_u_vowel_rule(substring) {
+  return substring.match(new RegExp('ruid|ruin|[^cgkqr]u[aeioy].'));
+}
+
+function does_following_substring_follow_the_special_z_o_rule(substring) {
+  return substring.match(new RegExp('zo[aey]'));
+}
+
+function does_following_substring_follow_the_special_z_o_o_rule(substring) {
+  return substring.match(new RegExp('zoo[lt]'));
+}
+
+function does_following_substring_follow_the_special_o_a_vowels_rule(substring) {
+  return substring.match(new RegExp('oa'));
+}
+
+function does_following_substring_follow_the_special_o_a_h_ending_rule(substring) {
+  return substring.match(new RegExp('oah'));
 }
