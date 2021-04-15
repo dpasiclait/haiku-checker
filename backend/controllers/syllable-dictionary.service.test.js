@@ -160,14 +160,109 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
   });
 
   describe('Words where "y" is a vowel', () => {
+    it('Word: azoology', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('azoology');
+      expect(result).toBe(5);
+    });
+
+    it('Word: autoanalysis', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('autoanalysis');
+      expect(result).toBe(6);
+    });
+
+    it('Word: biology', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('biology');
+      expect(result).toBe(4);
+    });
+
+    it('Word: bryan', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bryan');
+      expect(result).toBe(2);
+    });
+
     it('Word: by', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('by');
       expect(result).toBe(1);
     });
 
+    it('Word: crying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('crying');
+      expect(result).toBe(2);
+    });
+
+    it('Word: cryo', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cryo');
+      expect(result).toBe(2);
+    });
+
+    it('Word: cryogenic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cryogenic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: cyan', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cyan');
+      expect(result).toBe(2);
+    });
+
+    it('Word: denying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('denying');
+      expect(result).toBe(3);
+    });
+
+    it('Word: drying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('drying');
+      expect(result).toBe(2);
+    });
+
+    it('Word: eukaryotic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eukaryotic');
+      expect(result).toBe(5);
+    });
+
+    it('Word: frying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('frying');
+      expect(result).toBe(2);
+    });
+
+    it('Word: gypsy', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('gypsy');
+      expect(result).toBe(2);
+    });
+
     it('Word: ivy', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ivy');
       expect(result).toBe(2);
+    });
+
+    it('Word: myanmar', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('myanmar');
+      expect(result).toBe(3);
+    });
+
+    it('Word: pottery', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('pottery');
+      expect(result).toBe(3);
+    });
+
+    it('Word: query', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('query');
+      expect(result).toBe(2);
+    });
+
+    it('Word: synergy', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('synergy');
+      expect(result).toBe(3);
+    });
+
+    it('Word: trying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('trying');
+      expect(result).toBe(2);
+    });
+
+    it('Word: zoology', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zoology');
+      expect(result).toBe(4);
     });
   });
 
@@ -669,6 +764,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(3);
     });
 
+    it('Word: eevee', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eevee');
+      expect(result).toBe(2);
+    });
+
     it('Word: eve', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eve');
       expect(result).toBe(1);
@@ -1161,6 +1261,15 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     });
   });
 
+  describe('Flexible words with special vowel combinations that can be accurately counted by 2 or more rules', () => {
+    describe('Words that can be counted using the special "zo" rule or the "oa" ending rule', () => {
+      it('Word: protozoa', () => {
+        const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('protozoa');
+        expect(result).toBe(4);
+      });
+    });
+  });
+
   it('Word: zucco', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zucco');
     expect(result).toBe(2);
@@ -1206,11 +1315,6 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     expect(result).toBe(2);
   });
 
-  it('Word: pottery', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('pottery');
-    expect(result).toBe(3);
-  });
-
   it('Word: watching', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('watching');
     expect(result).toBe(2);
@@ -1241,11 +1345,6 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     expect(result).toBe(1);
   });
 
-  it('Word: trying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('trying');
-    expect(result).toBe(2);
-  });
-
   it('Word: fox', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fox');
     expect(result).toBe(1);
@@ -1271,16 +1370,6 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     expect(result).toBe(3);
   });
 
-  it('Word: biology', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('biology');
-    expect(result).toBe(4);
-  });
-
-  it('Word: protozoa', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('protozoa');
-    expect(result).toBe(4);
-  });
-
   it('Word: zoo', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zoo');
     expect(result).toBe(1);
@@ -1303,51 +1392,6 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
 
   it('Word: bitches', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bitches');
-    expect(result).toBe(2);
-  });
-
-  it('Word: crying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('crying');
-    expect(result).toBe(2);
-  });
-
-  it('Word: frying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('frying');
-    expect(result).toBe(2);
-  });
-
-  it('Word: drying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('drying');
-    expect(result).toBe(2);
-  });
-
-  it('Word: denying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('denying');
-    expect(result).toBe(3);
-  });
-
-  it('Word: myanmar', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('myanmar');
-    expect(result).toBe(3);
-  });
-
-  it('Word: cryogenic', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cryogenic');
-    expect(result).toBe(4);
-  });
-
-  it('Word: cryo', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cryo');
-    expect(result).toBe(2);
-  });
-
-  it('Word: cyan', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cyan');
-    expect(result).toBe(2);
-  });
-
-  it('Word: bryan', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bryan');
     expect(result).toBe(2);
   });
 
@@ -1431,24 +1475,9 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     expect(result).toBe(1);
   });
 
-  it('Word: synergy', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('synergy');
-    expect(result).toBe(3);
-  });
-
   it('Word: cue', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cue');
     expect(result).toBe(1);
-  });
-
-  it('Word: gypsy', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('gypsy');
-    expect(result).toBe(2);
-  });
-
-  it('Word: eevee', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eevee');
-    expect(result).toBe(2);
   });
 
   // it('Word: coal', () => {

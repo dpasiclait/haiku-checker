@@ -77,7 +77,6 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
     const substring_2_1_0 = `${letters[i - 2]}${letters[i - 1]}${letters[i]}`;
     const substring_2_1_0_1 = `${letters[i - 2]}${letters[i - 1]}${letters[i]}${letters[i + 1]}`;
     if (
-      is_letter_a_consonant(letters[i]) ||
       does_the_standard_i_o_n_rule_apply(substring_2_1_0_1) ||
       does_the_standard_n_i_rule_apply(substring_2_1_0)||
       does_the_standard_p_n_e_u_rule_apply(substring_3_2_1_0) ||
@@ -119,6 +118,7 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
     }
 
     if (
+      is_letter_a_consonant(letters[i]) ||
       (i === letters.length - 1) && does_the_standard_silent_e_ending_rule_apply(substring_3_2_1_0) ||
       (i === letters.length - 2) && numberOfKeyVowels > 0 && does_the_standard_silent_e_d_ending_rule_apply(substring_1_0_1) ||
       (i === letters.length - 2) && does_the_standard_silent_e_s_ending_rule_apply(substring_2_1_0_1) ||
@@ -146,7 +146,7 @@ function does_the_special_i_a_ending_rule_apply(substring) {
 }
 
 function is_letter_a_consonant(letter) {
-  return letter.match(new RegExp('[b-d]|[f-h]|[j-n]|[p-t]|v|w|x|z'));
+  return letter.match(new RegExp('[b-d]|[f-h]|[j-n]|[p-t]|[v-z]'));
 }
 
 function does_the_standard_i_o_n_rule_apply(substring) {
