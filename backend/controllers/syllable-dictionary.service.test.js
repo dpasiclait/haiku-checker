@@ -517,6 +517,16 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(2);
     });
 
+    it('Word: fiat', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fiat');
+      expect(result).toBe(2);
+    });
+
+    it('Word: ian', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ian');
+      expect(result).toBe(2);
+    });
+
     it('Word: ion', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ion');
       expect(result).toBe(2);
@@ -530,6 +540,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     it('Word: mia', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('mia');
       expect(result).toBe(2);
+    });
+
+    it('Word: niece', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('niece');
+      expect(result).toBe(1);
     });
 
     it('Word: pianist', () => {
@@ -814,6 +829,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(1);
     });
 
+    it('Word: niece', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('niece');
+      expect(result).toBe(1);
+    });
+
     it('Word: paste', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('paste');
       expect(result).toBe(1);
@@ -988,6 +1008,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     it('Word: cleaver', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cleaver');
       expect(result).toBe(2);
+    });
+
+    it('Word: coal', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('coal');
+      expect(result).toBe(1);
     });
 
     it('Word: coast', () => {
@@ -1268,265 +1293,460 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
         expect(result).toBe(4);
       });
     });
+
+    describe('Words that can be counted using the silent "e" rule, silent vowel following non silent vowel rule, or the "ue" ending rule', () => {
+      it('Word: cue', () => {
+        const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cue');
+        expect(result).toBe(1);
+      });
+
+      it('Word: moe', () => {
+        const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('moe');
+        expect(result).toBe(1);
+      });
+    });
   });
 
-  it('Word: zucco', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zucco');
-    expect(result).toBe(2);
+  describe('Words that can count vowel without applying other rules', () => {
+    it('Word: absorb', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('absorb');
+      expect(result).toBe(2);
+    });
+
+    it('Word: barf', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('barf');
+      expect(result).toBe(1);
+    });
+
+    it('Word: bed', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bed');
+      expect(result).toBe(1);
+    });
+
+    it('Word: bitches', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bitches');
+      expect(result).toBe(2);
+    });
+
+    it('Word: buzz', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('buzz');
+      expect(result).toBe(1);
+    });
+
+    it('Word: buzzes', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('buzzes');
+      expect(result).toBe(2);
+    });
+
+    it('Word: children', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('children');
+      expect(result).toBe(2);
+    });
+
+    it('Word: comb', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('comb');
+      expect(result).toBe(1);
+    });
+
+    it('Word: cotton', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cotton');
+      expect(result).toBe(2);
+    });
+
+    it('Word: croatian', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('croatian');
+      expect(result).toBe(3);
+    });
+
+    it('Word: fed', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fed');
+      expect(result).toBe(1);
+    });
+
+    it('Word: fox', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fox');
+      expect(result).toBe(1);
+    });
+
+    it('Word: hippoglossus', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('hippoglossus');
+      expect(result).toBe(4);
+    });
+
+    it('Word: little', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('little');
+      expect(result).toBe(2);
+    });
+
+    it('Word: misbehaving', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('misbehaving');
+      expect(result).toBe(4);
+    });
+
+    it('Word: nickle', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('nickle');
+      expect(result).toBe(2);
+    });
+
+    it('Word: petal', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('petal');
+      expect(result).toBe(2);
+    });
+
+    it('Word: riddle', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('riddle');
+      expect(result).toBe(2);
+    });
+
+    it('Word: shred', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('shred');
+      expect(result).toBe(1);
+    });
+
+    it('Word: shredded', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('shredded');
+      expect(result).toBe(2);
+    });
+
+    it('Word: student', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('student');
+      expect(result).toBe(2);
+    });
+
+    it('Word: trap', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('trap');
+      expect(result).toBe(1);
+    });
+
+    it('Word: want', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('want');
+      expect(result).toBe(1);
+    });
+
+    it('Word: turtle', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('turtle');
+      expect(result).toBe(2);
+    });
+
+    it('Word: wanted', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('wanted');
+      expect(result).toBe(2);
+    });
+
+    it('Word: watching', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('watching');
+      expect(result).toBe(2);
+    });
+
+    it('Word: witches', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witches');
+      expect(result).toBe(2);
+    });
+
+    it('Word: witness', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witness');
+      expect(result).toBe(2);
+    });
+
+    it('Word: witnesses', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witnesses');
+      expect(result).toBe(3);
+    });
+
+    it('Word: word', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('word');
+      expect(result).toBe(1);
+    });
+
+    it('Word: worded', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('worded');
+      expect(result).toBe(2);
+    });
+
+    it('Word: worm', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('worm');
+      expect(result).toBe(1);
+    });
+
+    it('Word: yang', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('yang');
+      expect(result).toBe(1);
+    });
+
+    it('Word: ying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ying');
+      expect(result).toBe(1);
+    });
+
+    it('Word: yung', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('yung');
+      expect(result).toBe(1);
+    });
+
+    it('Word: zucco', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zucco');
+      expect(result).toBe(2);
+    });
   });
 
-  it('Word: little', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('little');
-    expect(result).toBe(2);
+  describe('Words that are correct but hard to pinpoint rules that bind them', () => {
+    it('Word: coy', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('coy');
+      expect(result).toBe(1);
+    });
+
+    it('Word: day', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('day');
+      expect(result).toBe(1);
+    });
+
+    it('Word: you', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('you');
+      expect(result).toBe(1);
+    });
+
+    it('Word: zoo', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zoo');
+      expect(result).toBe(1);
+    });
   });
 
-  it('Word: petal', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('petal');
-    expect(result).toBe(2);
-  });
+  describe('Words that need rules', () => {
+    it('Word: abridgeable', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('abridgeable');
+      expect(result).toBe(4);
+    });
 
-  it('Word: turtle', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('turtle');
-    expect(result).toBe(2);
-  });
+    it('Word: advantageous', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('advantageous');
+      expect(result).toBe(4);
+    });
 
-  it('Word: riddle', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('riddle');
-    expect(result).toBe(2);
-  });
+    it('Word: ageing', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ageing');
+      expect(result).toBe(2);
+    });
 
-  it('Word: nickle', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('nickle');
-    expect(result).toBe(2);
-  });
+    it('Word: bludgeon', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bludgeon');
+      expect(result).toBe(2);
+    });
 
-  it('Word: cotton', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cotton');
-    expect(result).toBe(2);
-  });
+    it('Word: bogeying', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bogeying');
+      expect(result).toBe(3);
+    });
 
-  it('Word: student', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('student');
-    expect(result).toBe(2);
-  });
+    it('Word: bourgeois', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bourgeois');
+      expect(result).toBe(2);
+    });
 
-  it('Word: children', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('children');
-    expect(result).toBe(2);
-  });
+    it('Word: bungey', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bungey');
+      expect(result).toBe(2);
+    });
 
-  it('Word: watching', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('watching');
-    expect(result).toBe(2);
-  });
+    it('Word: congeal', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('congeal');
+      expect(result).toBe(2);
+    });
 
-  it('Word: misbehaving', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('misbehaving');
-    expect(result).toBe(4);
-  });
+    it('Word: dungeon', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('dungeon');
+      expect(result).toBe(2);
+    });
 
-  it('Word: day', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('day');
-    expect(result).toBe(1);
-  });
+    it('Word: gear', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('gear');
+      expect(result).toBe(1);
+    });
 
-  it('Word: coy', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('coy');
-    expect(result).toBe(1);
-  });
+    it('Word: geiger', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geiger');
+      expect(result).toBe(2);
+    });
 
-  it('Word: hippoglossus', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('hippoglossus');
-    expect(result).toBe(4);
+    it('Word: geoff', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geoff');
+      expect(result).toBe(1);
+    });
+
+    it('Word: geoffrey', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geoffrey');
+      expect(result).toBe(2);
+    });
+
+    it('Word: geyser', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geyser');
+      expect(result).toBe(2);
+    });
+
+    it('Word: georgette', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('georgette');
+      expect(result).toBe(2);
+    });
+
+    it('Word: geulah', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geulah');
+      expect(result).toBe(2);
+    });
+
+    it('Word: interchangeably', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('interchangeably');
+      expect(result).toBe(5);
+    });
+
+    it('Word: longeing', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('longeing');
+      expect(result).toBe(2);
+    });
+
+    it('Word: orangeish', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('orangeish');
+      expect(result).toBe(3);
+    });
+
+    it('Word: pageant', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('pageant');
+      expect(result).toBe(2);
+    });
+
+    it('Word: voyageur', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('voyageur');
+      expect(result).toBe(3);
+    });
+
+    it('Word: eleanor', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eleanor');
+      expect(result).toBe(3);
+    });
+
+    it('Word: glean', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('glean');
+      expect(result).toBe(1);
+    });
+
+
+
+    it('Word: apogeic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('apogeic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: archeology', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('archeology');
+      expect(result).toBe(5);
+    });
+
+    it('Word: boolean', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('boolean');
+      expect(result).toBe(3);
+    });
+
+    it('Word: cleo', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cleo');
+      expect(result).toBe(2);
+    });
+
+    it('Word: cleopatra', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cleopatra');
+      expect(result).toBe(4);
+    });
+
+    it('Word: eon', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('eon');
+      expect(result).toBe(2);
+    });
+
+    it('Word: galilean', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('Galilean');
+      expect(result).toBe(4);
+    });
+
+    it('Word: geo', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geo');
+      expect(result).toBe(2);
+    });
+
+    it('Word: geographer', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geographer');
+      expect(result).toBe(4);
+    });
+
+    it('Word: geoid', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geoid');
+      expect(result).toBe(2);
+    });
+
+    it('Word: geotropism', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geotropism');
+      expect(result).toBe(4);
+    });
+
+    it('Word: georgia', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('georgia');
+      expect(result).toBe(2);
+    });
+
+    it('Word: geoscopic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geoscopic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: lea', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('lea');
+      expect(result).toBe(2);
+    });
+
+    it('Word: leo', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('leo');
+      expect(result).toBe(2);
+    });
+
+    it('Word: leon', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('leon');
+      expect(result).toBe(2);
+    });
+
+    it('Word: lymphangeitis', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('lymphangeitis');
+      expect(result).toBe(5);
+    });
+
+    it('Word: noachian', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('noachian');
+      expect(result).toBe(4);
+    });
+
+    it('Word: oasis', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('oasis');
+      expect(result).toBe(3);
+    });
+
+    it('Word: oceanic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('oceanic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: orlean', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('orlean');
+      expect(result).toBe(3);
+    });
+
+    it('Word: orleans', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('orleans');
+      expect(result).toBe(3);
+    });
+
+    it('Word: pangea', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('pangea');
+      expect(result).toBe(3);
+    });
   });
 
   it('Word: w', () => {
     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('w');
     expect(result).toBe(1);
   });
-
-  it('Word: fox', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fox');
-    expect(result).toBe(1);
-  });
-
-  it('Word: buzz', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('buzz');
-    expect(result).toBe(1);
-  });
-
-  it('Word: buzzes', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('buzzes');
-    expect(result).toBe(2);
-  });
-
-  it('Word: witness', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witness');
-    expect(result).toBe(2);
-  });
-
-  it('Word: witnesses', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witnesses');
-    expect(result).toBe(3);
-  });
-
-  it('Word: zoo', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('zoo');
-    expect(result).toBe(1);
-  });
-
-  it('Word: moe', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('moe');
-    expect(result).toBe(1);
-  });
-
-  it('Word: you', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('you');
-    expect(result).toBe(1);
-  });
-
-  it('Word: witches', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('witches');
-    expect(result).toBe(2);
-  });
-
-  it('Word: bitches', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bitches');
-    expect(result).toBe(2);
-  });
-
-  it('Word: ying', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ying');
-    expect(result).toBe(1);
-  });
-
-  it('Word: yang', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('yang');
-    expect(result).toBe(1);
-  });
-
-  it('Word: yung', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('yung');
-    expect(result).toBe(1);
-  });
-
-  it('Word: trap', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('trap');
-    expect(result).toBe(1);
-  });
-
-  it('Word: fed', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fed');
-    expect(result).toBe(1);
-  });
-
-  it('Word: bed', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('bed');
-    expect(result).toBe(1);
-  });
-
-  it('Word: barf', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('barf');
-    expect(result).toBe(1);
-  });
-
-  it('Word: want', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('want');
-    expect(result).toBe(1);
-  });
-
-  it('Word: wanted', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('wanted');
-    expect(result).toBe(2);
-  });
-
-  it('Word: word', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('word');
-    expect(result).toBe(1);
-  });
-
-  it('Word: worded', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('worded');
-    expect(result).toBe(2);
-  });
-
-  it('Word: shred', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('shred');
-    expect(result).toBe(1);
-  });
-
-  it('Word: shredded', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('shredded');
-    expect(result).toBe(2);
-  });
-
-  it('Word: absorb', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('absorb');
-    expect(result).toBe(2);
-  });
-
-  it('Word: comb', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('comb');
-    expect(result).toBe(1);
-  });
-
-  it('Word: worm', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('worm');
-    expect(result).toBe(1);
-  });
-
-  it('Word: cue', () => {
-    const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('cue');
-    expect(result).toBe(1);
-  });
-
-  // it('Word: coal', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('coal');
-  //   expect(result).toBe(1);
-  // });
-
-  // it('Word: niece', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('niece');
-  //   expect(result).toBe(1);
-  // });
-
-  // it('Word: ian', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('ian');
-  //   expect(result).toBe(2);
-  // });
-
-  // it('Word: fiat', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('fiat');
-  //   expect(result).toBe(2);
-  // });
-
-  // it('Word: croatian', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('croatian');
-  //   expect(result).toBe(3);
-  // });
-
-  // it('Word: noachian', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('noachian');
-  //   expect(result).toBe(4);
-  // });
-
-  // it('Word: oasis', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('oasis');
-  //   expect(result).toBe(3);
-  // });
-
-  // it('Word: oceanic', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('oceanic');
-  //   expect(result).toBe(4);
-  // });
-
-  // it('Word: pangea', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('pangea');
-  //   expect(result).toBe(3);
-  // });
-
-  // it('Word: geo', () => {
-  //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels('geo');
-  //   expect(result).toBe(2);
-  // });
 });

@@ -51,7 +51,7 @@ exports.countSyllablesBySplittingWord = (word) => {
 };
 
 exports.countSyllablesByCountingKeyVowels = (word) => {
-  letters = word.split('');
+  letters = word.toLowerCase().split('');
 
   if (letters.length === 1) {
     return 1;
@@ -106,7 +106,6 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
       does_the_special_c_o_rule(substring_2_1_0_1_2) ||
       does_the_special_e_u_rule_apply(substring_3_2_1_0_1) ||
       does_the_special_preceding_i_vowel_rule_apply(substring_1_0) ||
-      // does_the_special_preceding_o_vowel_rule_apply(substring_2_1_0_1) ||
       does_the_special_preceding_u_vowel_rule_apply(substring_2_1_0_1) ||
       does_the_special_z_o_rule_apply(substring_2_1_0_1) ||
       ((i === letters.length - 1) && does_the_special_o_a_ending_rule_apply(substring_1_0)) ||
@@ -183,10 +182,6 @@ function does_the_special_e_u_rule_apply(substring) {
 
 function does_the_special_preceding_i_vowel_rule_apply(substring) {
   return substring.match(new RegExp('i[aou]'));
-}
-
-function does_the_special_preceding_o_vowel_rule_apply(substring) {
-  return substring.match(new RegExp('[csxz]o[aey]n'));
 }
 
 function does_the_standard_u_e_vowels_rule_apply(substring) {
