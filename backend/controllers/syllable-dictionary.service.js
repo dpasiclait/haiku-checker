@@ -107,7 +107,7 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
       does_the_special_c_o_rule(substring_2_1_0_1_2) ||
       does_the_special_e_u_rule_apply(substring_3_2_1_0_1) ||
       does_the_special_preceding_i_vowel_rule_apply(substring_1_0) ||
-      does_the_special_preceding_o_vowel_rule_apply(substring_2_1_0_1) ||
+      // does_the_special_preceding_o_vowel_rule_apply(substring_2_1_0_1) ||
       does_the_special_preceding_u_vowel_rule_apply(substring_2_1_0_1) ||
       does_the_special_z_o_rule_apply(substring_2_1_0_1) ||
       ((i === letters.length - 1) && does_the_special_o_a_ending_rule_apply(substring_1_0)) ||
@@ -119,10 +119,10 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
     }
 
     if (
-      does_the_standard_silent_vowel_rule_apply(substring_1_0) ||
       (i === letters.length - 1) && does_the_standard_silent_e_ending_rule_apply(substring_3_2_1_0) ||
       (i === letters.length - 2) && numberOfKeyVowels > 0 && does_the_standard_silent_e_d_ending_rule_apply(substring_1_0_1) ||
-      (i === letters.length - 2) && does_the_standard_silent_e_s_ending_rule_apply(substring_2_1_0_1)
+      (i === letters.length - 2) && does_the_standard_silent_e_s_ending_rule_apply(substring_2_1_0_1) ||
+      does_the_standard_silent_vowel_rule_apply(substring_1_0)
     ) {
       continue;
     }
@@ -174,7 +174,7 @@ function does_the_special_a_u_t_o_prefix_rule_apply(substring) {
 }
 
 function does_the_special_c_o_rule(substring) {
-  return substring.match(new RegExp('coate|coag.|coex.'));
+  return substring.match(new RegExp('coate|coag.|coe[drx].'));
 }
 
 function does_the_special_e_u_rule_apply(substring) {
@@ -218,7 +218,7 @@ function does_the_standard_silent_vowel_rule_apply(substring) {
 }
 
 function does_the_standard_silent_e_ending_rule_apply(substring) {
-  return substring.match(new RegExp('.[aeiouy][^aeiou]e|aste'));
+  return substring.match(new RegExp('.[aeiouy][^aeiou]e|aste|..[cs]e'));
 }
 
 function does_the_standard_silent_e_d_ending_rule_apply(substring) {
