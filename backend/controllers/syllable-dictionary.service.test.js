@@ -2011,10 +2011,10 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(2);
     });
 
-    // it('Word: aerate', () => {
-    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aerate');
-    //   expect(result).toBe(2);
-    // });
+    it('Word: aerate', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aerate');
+      expect(result).toBe(2);
+    });
 
     it('Word: aeluroidea', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aeluroidea');
@@ -2263,11 +2263,10 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
   });
 
   describe('Words with trailing suffixes after a vowel: ', () => {
-    // it('Word: virtuous', () => {
-    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('virtuous');
-    //   expect(result).toBe(3);
-    // });
-
+    it('Word: virtuous', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('virtuous');
+      expect(result).toBe(3);
+    });
 
     it('Word: haecceity', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('haecceity');
@@ -2277,6 +2276,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     it('Word: paraaminobenzoic', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('paraaminobenzoic');
       expect(result).toBe(8);
+    });
+
+    it('Word: stoic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('stoic');
+      expect(result).toBe(2);
     });
   });
 });

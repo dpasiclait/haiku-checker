@@ -213,10 +213,6 @@ function does_the_standard_silent_vowel_rule_apply(substring) {
   return substring.match(new RegExp('[aeiou][aeiouy]'));
 }
 
-function does_the_standard_silent_e_ending_rule_apply(substring) {
-  return substring.match(new RegExp('.[aeiouy][^aeiou]e|aste|..[cs]e'));
-}
-
 function does_the_standard_silent_e_d_ending_rule_apply(substring) {
   return substring.match(new RegExp('[^dt]ed'));
 }
@@ -249,11 +245,13 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
   for (i = 1; i < letters.length; i++) {
     let substring = get_substring(letters, i - 1, i)
     if (does_the_special_y_vowel_rule_apply(substring)) {
+      // console.log('does_the_special_y_vowel_rule_apply', letters[i]);
       numberOfKeyVowels++;
       continue;
     }
 
     if (is_letter_a_consonant(letters[i])) {
+      // console.log('is_letter_a_consonant', letters[i]);
       continue;
     }
 
@@ -263,13 +261,18 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
       (i >= 2 && i <= 6) &&
       does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(prefixSubstring)
     ) {
+      // console.log('does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply', letters[i]);
       numberOfKeyVowels++;
       continue;
     }
 
     // * special cases
     substring = get_substring(letters, i - 3, i + 1);
-    if ((i === letters.length - 2) && does_special_ael_ending_apply(substring)) {
+    if (
+      (i === letters.length - 2) &&
+      does_special_ael_ending_apply(substring)
+    ) {
+      // console.log('does_special_ael_ending_apply', letters[i]);
       numberOfKeyVowels++;
       continue;
     }
@@ -279,6 +282,7 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
       does_special_aa_vowel_rule_apply(substring) ||
       does_special_ae_vowel_rule_apply(substring)
     ) {
+      // console.log('does_special_aa_vowel_rule_apply or does_special_ae_vowel_rule_apply', letters[i]);
       numberOfKeyVowels++;
       i++;
       continue;
@@ -288,24 +292,28 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
     const suffixSubstring = get_trailing_suffix_substring(letters, i);
     if (
       (i >= letters.length - 5 && i <= letters.length - 2) &&
-      does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply(suffixSubstring)
+      does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(suffixSubstring)
     ) {
+      // console.log('does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply', letters[i]);
       numberOfKeyVowels++;
       continue;
     }
 
     // * silent vowels
-    substring = get_substring(letters, i - 1, i); //`${letters[i - 1]}${letters[i]}`;
+    substring = get_substring(letters, i - 1, i);
     if (
       (i === letters.length - 1) && does_the_standard_silent_e_ending_rule_apply(get_substring(letters, i - 3, i)) ||
+      (i === letters.length - 1) && does_the_standard_silent_e_ending_rule_apply(get_substring(letters, i - 2, i)) ||
       (i === letters.length - 2) && numberOfKeyVowels > 0 && does_the_standard_silent_e_d_ending_rule_apply(get_substring(letters, i - 1, i + 1)) ||
       (i === letters.length - 2) && does_the_standard_silent_e_s_ending_rule_apply(get_substring(letters, i - 2, i + 1)) ||
       does_the_standard_silent_vowel_rule_apply(substring)
     ) {
+      // console.log('does_the_standard_silent_vowel_rule_apply or silent endings', letters[i]);
       continue;
     }
 
     numberOfKeyVowels++;
+    // console.log('normal count', letters[i]);
   }
 
   return numberOfKeyVowels;
@@ -362,9 +370,9 @@ function get_trailing_suffix_substring(letters, position) {
   return letters.slice(position - 1).join('');
 }
 
-function does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply(substring) {
-  // ! -ed -en -al not included
-  if (substring.match(new RegExp('[aeiouy](er|or|ic)'))) {
+function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(substring) {
+  // ! -ed -en -er -al not included
+  if (substring.match(new RegExp('[aeiouy](or|ic)'))) {
     return true;
   }
 
@@ -380,6 +388,18 @@ function does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply(substring) 
   // ! -ology not included
   if (substring.match(new RegExp('[aeiouy](esque)'))) {
     return true;
+  }
+
+  return false;
+}
+
+function does_the_standard_silent_e_ending_rule_apply(substring) {
+  if (substring.match(new RegExp('[aeiouy][^aeiou]e'))) {
+    return true;
+  }
+
+  if (substring.match(new RegExp('.[aeiouy][^aeiou]e|aste|..[cs]e'))) {
+    return true
   }
 
   return false;
