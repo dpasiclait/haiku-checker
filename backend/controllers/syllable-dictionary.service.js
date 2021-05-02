@@ -1,4 +1,3 @@
-
 const prefixes = [
   'de',
   'dis',
@@ -108,6 +107,8 @@ exports.countSyllablesByCountingKeyVowels = (word) => {
       does_the_special_preceding_i_vowel_rule_apply(substring_1_0) ||
       does_the_special_preceding_u_vowel_rule_apply(substring_2_1_0_1) ||
       does_the_special_z_o_rule_apply(substring_2_1_0_1) ||
+      does_the_special_f_a_e_l_rule_apply(substring_2_1_0_1) ||
+      does_the_special_a_e_rule_apply(substring_2_1_0) ||
       ((i === letters.length - 1) && does_the_special_o_a_ending_rule_apply(substring_1_0)) ||
       ((i === letters.length - 2) && does_the_special_o_a_h_ending_rule_apply(substring_1_0_1)) ||
       (i === letters.length - 2) && does_the_special_e_s_ending_rule_apply(substring_1_0_1)
@@ -223,3 +224,164 @@ function does_the_standard_silent_e_d_ending_rule_apply(substring) {
 function does_the_standard_silent_e_s_ending_rule_apply(substring) {
   return substring.match(new RegExp('[aeiouy][^aeiou]es'));
 }
+
+function does_the_special_f_a_e_l_rule_apply(substring){
+  return substring.match(new RegExp('fael'));
+}
+
+function does_the_special_a_e_rule_apply(substring){
+  return substring.match(new RegExp('ae[aeiou]'));
+}
+
+exports.countSyllablesByCountingKeyVowels2 = (word) => {
+  letters = word.toLowerCase().split('');
+
+  if (letters.length === 1) {
+    return 1;
+  }
+
+  numberOfKeyVowels = 0;
+
+  if (is_first_letter_vowel(`${letters[0]}${letters[1]}`)) {
+    numberOfKeyVowels++;
+  }
+
+  for (i = 1; i < letters.length; i++) {
+    let substring = get_substring(letters, i - 1, i)
+    if (does_the_special_y_vowel_rule_apply(substring)) {
+      numberOfKeyVowels++;
+      continue;
+    }
+
+    if (is_letter_a_consonant(letters[i])) {
+      continue;
+    }
+
+    // * prefixes
+    const prefixSubstring = get_preceding_prefix_substring(letters, i);
+    if (
+      (i >= 2 && i <= 6) &&
+      does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(prefixSubstring)
+    ) {
+      numberOfKeyVowels++;
+      continue;
+    }
+
+    // * special cases
+    substring = get_substring(letters, i - 3, i + 1);
+    if ((i === letters.length - 2) && does_special_ael_ending_apply(substring)) {
+      numberOfKeyVowels++;
+      continue;
+    }
+
+    substring = get_substring(letters, i - 1, i + 1);
+    if (
+      does_special_aa_vowel_rule_apply(substring) ||
+      does_special_ae_vowel_rule_apply(substring)
+    ) {
+      numberOfKeyVowels++;
+      i++;
+      continue;
+    }
+
+    // * suffixes
+    const suffixSubstring = get_trailing_suffix_substring(letters, i);
+    if (
+      (i >= letters.length - 5 && i <= letters.length - 2) &&
+      does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply(suffixSubstring)
+    ) {
+      numberOfKeyVowels++;
+      continue;
+    }
+
+    // * silent vowels
+    substring = get_substring(letters, i - 1, i); //`${letters[i - 1]}${letters[i]}`;
+    if (
+      (i === letters.length - 1) && does_the_standard_silent_e_ending_rule_apply(get_substring(letters, i - 3, i)) ||
+      (i === letters.length - 2) && numberOfKeyVowels > 0 && does_the_standard_silent_e_d_ending_rule_apply(get_substring(letters, i - 1, i + 1)) ||
+      (i === letters.length - 2) && does_the_standard_silent_e_s_ending_rule_apply(get_substring(letters, i - 2, i + 1)) ||
+      does_the_standard_silent_vowel_rule_apply(substring)
+    ) {
+      continue;
+    }
+
+    numberOfKeyVowels++;
+  }
+
+  return numberOfKeyVowels;
+};
+
+function get_preceding_prefix_substring(letters, position) {
+  return letters.slice(0, position + 1).join('');
+}
+
+function does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(substring){
+  // ! be- not included
+  if(substring.match(new RegExp('(bi|co|de|di|du|eu|re)[aeiouy]'))) {
+    return true;
+  }
+
+  // ! aqu- bio- dia- equ- uni- zoo- not included
+  if (substring.match(new RegExp('(dia|epi|exo|iso|neo|pre|pro|tri|uni)[aeiouy]'))) {
+    return true;
+  }
+
+  // ! soci- not included
+  if(substring.match(new RegExp('(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|mega|mono|nano|octo|omni|para|peri|poly|semi|tele|tera)[aeiouy]'))){
+    return true;
+  }
+
+  if(substring.match(new RegExp('(centi|extra|extro|infra|intra|macro|micro|milli|multi|ortho|photo|retro|supra|tetra|ultra)[aeiouy]'))){
+    return true;
+  }
+
+  if(substring.match(new RegExp('(chrono|contra|hetero)[aeiouy]'))){
+    return true;
+  }
+
+  return false;
+}
+
+function get_substring(letters, start, end) {
+  return letters.slice(start, end + 1).join('');
+}
+
+function does_special_ael_ending_apply(substring) {
+  return substring.match('(ph|.f|.r)ael');
+}
+
+function does_special_aa_vowel_rule_apply(substring) {
+  return substring.match('aa(i)');
+}
+
+function does_special_ae_vowel_rule_apply(substring) {
+  return substring.match(new RegExp('ae[aiou]'));
+}
+
+function get_trailing_suffix_substring(letters, position) {
+  return letters.slice(position - 1).join('');
+}
+
+function does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply(substring) {
+  // ! -ed -en -al not included
+  if (substring.match(new RegExp('[aeiouy](er|or|ic)'))) {
+    return true;
+  }
+
+  // ! -ian not included
+  if (substring.match(new RegExp('[aeiouy](acy|ant|ary|ate|eer|est|ify|ile|ing|ion|ise|ish|ism|ist|ity|ive|ize|ous)'))) {
+    return true;
+  }
+
+  if (substring.match(new RegExp('[aeiouy](able|ance|ence|ible|ical|ious|itis|osis)'))) {
+    return true;
+  }
+
+  // ! -ology not included
+  if (substring.match(new RegExp('[aeiouy](esque)'))) {
+    return true;
+  }
+
+  return false;
+}
+

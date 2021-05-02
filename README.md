@@ -188,3 +188,5 @@ Hopefully after deployment of the current version, I can implement the simplifie
 1. [This generous github user](https://github.com/dwyl/english-words) and [this internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
 2. [How Many Syllables](https://www.howmanysyllables.com/) for the syllable counts.
 3. [Scheme Color Tool](https://www.schemecolor.com/) for the color schemes of the koi fish.
+4. [List of Prefixes and Suffixes](https://www.myenglishteacher.eu/blog/prefixes-suffixes-list/)
+5. [Second List of Prefixes and Suffixes](https://www.litinfocus.com/120-root-words-prefixes-and-suffixes-pdf-list/)
