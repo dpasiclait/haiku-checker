@@ -1826,6 +1826,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('retroactivity');
       expect(result).toBe(6);
     });
+
+    it('Word: ultraenergetic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ultraenergetic');
+      expect(result).toBe(6);
+    });
   });
 
   describe('Words with aa vowel combinations', () => {
@@ -2331,6 +2336,76 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(4);
     });
 
+    it('Word: phaeism', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('phaeism');
+      expect(result).toBe(2);
+    });
+
+    it('Word: praecoces', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praecoces');
+      expect(result).toBe(3);
+    });
+
+    it('Word: primaeval', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('primaeval');
+      expect(result).toBe(3);
+    });
+
+    it('Word: proctodaedaea', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('proctodaedaea');
+      expect(result).toBe(5);
+    });
+
+    it('Word: propraetor', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('propraetor');
+      expect(result).toBe(3);
+    });
+
+    it('Word: proquaestor', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('proquaestor');
+      expect(result).toBe(3);
+    });
+
+    it('Word: psychodidae', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('psychodidae');
+      expect(result).toBe(4);
+    });
+
+    it('Word: pteropaedes', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('pteropaedes');
+      expect(result).toBe(4);
+    });
+
+    it('Word: pteropaedic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('pteropaedic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: ptilopaedes', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ptilopaedes');
+      expect(result).toBe(4);
+    });
+
+    it('Word: ptilopaedic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ptilopaedic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: quaere', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('quaere');
+      expect(result).toBe(2);
+    });
+
+    it('Word: quaeres', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('quaeres');
+      expect(result).toBe(2);
+    });
+
+    it('Word: quaestor', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('quaestor');
+      expect(result).toBe(2);
+    });
+
     it('Word: Rafael', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Rafael');
       expect(result).toBe(3);
@@ -2339,6 +2414,21 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     it('Word: Raphael', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Raphael');
       expect(result).toBe(3);
+    });
+
+    // it('Word: raphaelesque', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('raphaelesque');
+    //   expect(result).toBe(4);
+    // });
+
+    // it('Word: esque', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('esque');
+    //   expect(result).toBe(1);
+    // });
+
+    it('Word: Rhaetian', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Rhaetian');
+      expect(result).toBe(2);
     });
 
     it('Word: Sabaean', () => {
@@ -2361,10 +2451,44 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(4);
     });
 
+    it('Word: sphaerella', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('sphaerella');
+      expect(result).toBe(3);
+    });
+
     // it('Word: subaerial', () => {
     //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('subaerial');
     //   expect(result).toBe(4);
     // });
+
+    it('Word: tael', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('tael');
+      expect(result).toBe(1);
+    });
+
+    it('Word: uraei', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('uraei');
+      expect(result).toBe(3);
+    });
+
+    it('Word: usquabae', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('usquabae');
+      expect(result).toBe(3);
+    });
+
+    // it('Word: villaette', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('villaette');
+    //   expect(result).toBe(2);
+    // });
+
+    it('Word: vistaed', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('vistaed');
+      expect(result).toBe(2);
+    });
+  });
+
+  describe('Words with ai vowel combinations', () => {
+
   });
 
   describe('Words with trailing suffixes after a vowel: ', () => {

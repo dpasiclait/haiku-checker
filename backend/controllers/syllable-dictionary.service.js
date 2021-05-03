@@ -205,22 +205,6 @@ function does_the_special_o_a_h_ending_rule_apply(substring) {
   return substring.match(new RegExp('oah'));
 }
 
-function does_the_special_e_s_ending_rule_apply(substring) {
-  return substring.match(new RegExp('[csxz]es'));
-}
-
-function does_the_standard_silent_vowel_rule_apply(substring) {
-  return substring.match(new RegExp('[aeiou][aeiouy]'));
-}
-
-function does_the_standard_silent_e_d_ending_rule_apply(substring) {
-  return substring.match(new RegExp('[^dt]ed'));
-}
-
-function does_the_standard_silent_e_s_ending_rule_apply(substring) {
-  return substring.match(new RegExp('[aeiouy][^aeiou]es'));
-}
-
 function does_the_special_f_a_e_l_rule_apply(substring){
   return substring.match(new RegExp('fael'));
 }
@@ -301,9 +285,11 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
 
     // * suffixes
     const suffixSubstring = get_trailing_suffix_substring(letters, i);
+    substring = get_substring(letters, i - 3, i + 1);
     if (
-      (i >= letters.length - 5 && i <= letters.length - 2) &&
-      does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(suffixSubstring)
+      (i >= letters.length - 5 && i <= letters.length - 2) && does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(suffixSubstring) ||
+      (i === letters.length - 1) && does_the_special_e_ending_rule_apply(get_substring(letters, i - 3, i)) ||
+      (i === letters.length - 2) && does_the_special_e_s_ending_rule_apply(substring)
     ) {
       // console.log('does_a_suffix_beginning_in_a_vowel_after_a_vowel_rule_apply', letters[i]);
       numberOfKeyVowels++;
@@ -334,6 +320,10 @@ function get_preceding_prefix_substring(letters, position) {
   return letters.slice(0, position + 1).join('');
 }
 
+function does_special_ae_vowel_exception_rule_apply(substring) {
+  return substring.match(new RegExp('^(medi|micro|photo|poly)ae'));
+}
+
 function does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(substring){
   // ! be- not included
   if(substring.match(new RegExp('^(bi|co|de|di|du|eu|re)[aeiouy]'))) {
@@ -348,7 +338,7 @@ function does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(substring){
   }
 
   // ! soci- not included
-  if(substring.match(new RegExp('^(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|meta|mega|mono|nano|octo|omni|para|peri|poly|semi|tele|tera)[aeiouy]'))) {
+  if(substring.match(new RegExp('^(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|meta|mega|mono|nano|octo|omni|para|peri|poly|pyro|semi|tele|tera)[aeiouy]'))) {
     // console.log('(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|mega|mono|nano|octo|omni|para|peri|poly|semi|tele|tera)[aeiouy]');
     return true;
   }
@@ -358,7 +348,7 @@ function does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(substring){
     return true;
   }
 
-  if(substring.match(new RegExp('^(chrono|contra|hetero)[aeiouy]'))) {
+  if(substring.match(new RegExp('^(chrono|contra|hetero|pseudo|psycho)[aeiouy]'))) {
     // console.log('(chrono|contra|hetero)[aeiouy]');
     return true;
   }
@@ -383,15 +373,15 @@ function does_special_ael_ending_apply(substring) {
     return true;
   }
 
+  if (substring.match('(ph|.f|.m|.r)aelesque')) {
+    return true;
+  }
+
   return false;
 }
 
 function does_special_aa_vowel_rule_apply(substring) {
   return substring.match('aa(i)');
-}
-
-function does_special_ae_vowel_exception_rule_apply(substring) {
-  return substring.match(new RegExp('^(medi|micro)ae'));
 }
 
 function does_special_ae_vowel_rule_apply(substring) {
@@ -425,6 +415,14 @@ function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(subs
   return false;
 }
 
+function does_the_special_e_ending_rule_apply(substring) {
+  return substring.match(new RegExp('ae[dr]e'));
+}
+
+function does_the_special_e_s_ending_rule_apply(substring) {
+  return substring.match(new RegExp('..[csxz]es|ae[dr]es'));
+}
+
 function does_the_standard_silent_e_ending_rule_apply(substring) {
   if (substring.match(new RegExp('[aeiouy][^aeiou]e'))) {
     return true;
@@ -437,3 +435,14 @@ function does_the_standard_silent_e_ending_rule_apply(substring) {
   return false;
 }
 
+function does_the_standard_silent_e_d_ending_rule_apply(substring) {
+  return substring.match(new RegExp('[^dt]ed'));
+}
+
+function does_the_standard_silent_e_s_ending_rule_apply(substring) {
+  return substring.match(new RegExp('[aeiouy][^aeiou]es'));
+}
+
+function does_the_standard_silent_vowel_rule_apply(substring) {
+  return substring.match(new RegExp('[aeiou][aeiouy]'));
+}
