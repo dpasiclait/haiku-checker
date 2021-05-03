@@ -1802,6 +1802,21 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(3);
     });
 
+    it('Word: metaethics', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('metaethics');
+      expect(result).toBe(4);
+    });
+
+    it('Word: metaethical', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('metaethical');
+      expect(result).toBe(5);
+    });
+
+    it('Word: paraesthetic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('paraesthetic');
+      expect(result).toBe(5);
+    });
+
     it('Word: paraaminobenzoic', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('paraaminobenzoic');
       expect(result).toBe(8);
@@ -2066,10 +2081,10 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(5);
     });
 
-    // it('Word: archaeocyte ', () => {
-    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('archaeocyte');
-    //   expect(result).toBe(4);
-    // });
+    it('Word: archaeocyte ', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('archaeocyte');
+      expect(result).toBe(4);
+    });
 
     it('Word: athenaeum ', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('athenaeum');
@@ -2196,6 +2211,31 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
     //   expect(result).toBe(4);
     // });
 
+    it('Word: Ishmael', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Ishmael');
+      expect(result).toBe(3);
+    });
+
+    it('Word: Ishmaelite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Ishmaelite');
+      expect(result).toBe(4);
+    });
+
+    it('Word: ishmaelitic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ishmaelitic');
+      expect(result).toBe(5);
+    });
+
+    it('Word: ishmaelitish', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ishmaelitish');
+      expect(result).toBe(5);
+    });
+
+    it('Word: ishmaelitism', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ishmaelitism');
+      expect(result).toBe(5);
+    });
+
     it('Word: Israel', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Israel');
       expect(result).toBe(3);
@@ -2206,8 +2246,43 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(3);
     });
 
+    it('Word: Israelite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Israelite');
+      expect(result).toBe(4);
+    });
+
+    it('Word: laemodipoda', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('laemodipoda');
+      expect(result).toBe(5);
+    });
+
+    it('Word: laet', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('laet');
+      expect(result).toBe(1);
+    });
+
+    it('Word: laetic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('laetic');
+      expect(result).toBe(2);
+    });
+
+    it('Word: lilaeopsis', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('lilaeopsis');
+      expect(result).toBe(4);
+    });
+
+    it('Word: maelstrom', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('maelstrom');
+      expect(result).toBe(2);
+    });
+
     it('Word: Maccabaeus', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Maccabaeus');
+      expect(result).toBe(4);
+    });
+
+    it('Word: mediaeval', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('mediaeval');
       expect(result).toBe(4);
     });
 
@@ -2216,15 +2291,45 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(2);
     });
 
+    it('Word: microaerophile', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('microaerophile');
+      expect(result).toBe(5);
+    });
+
+    it('Word: micropalaeontology', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('micropalaeontology');
+      expect(result).toBe(8);
+    });
+
     it('Word: Nicaea', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Nicaea');
       expect(result).toBe(3);
+    });
+
+    it('Word: nonaerated', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('nonaerated');
+      expect(result).toBe(4);
+    });
+
+    it('Word: notaeal', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('notaeal');
+      expect(result).toBe(3);
+    });
+
+    it('Word: oligochaete', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('oligochaete');
+      expect(result).toBe(4);
     });
 
     // it('Word: palaetiology', () => {
     //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('palaetiology');
     //   expect(result).toBe(6);
     // });
+
+    it('Word: pezizaeform', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('pezizaeform');
+      expect(result).toBe(4);
+    });
 
     it('Word: Rafael', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Rafael');
