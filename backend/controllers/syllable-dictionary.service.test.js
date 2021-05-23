@@ -1939,6 +1939,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(8);
     });
 
+    it('Word: Quaalude', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Quaalude');
+      expect(result).toBe(2);
+    });
+
     it('Word: raadzaal', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('raadzaal');
       expect(result).toBe(2);
@@ -2488,10 +2493,360 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
   });
 
   describe('Words with ai vowel combinations', () => {
+    it('Word: abaisse', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('abaisse');
+      expect(result).toBe(2);
+    });
 
+    it('Word: abigail', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('abigail');
+      expect(result).toBe(3);
+    });
+
+    it('Word: abraid', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('abraid');
+      expect(result).toBe(2);
+    });
+
+    it('Word: abstain', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('abstain');
+      expect(result).toBe(2);
+    });
+
+    it('Word: acclaim', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('acclaim');
+      expect(result).toBe(2);
+    });
+
+    it('Word: achakzai', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('achakzai');
+      expect(result).toBe(3);
+    });
+
+    it('Word: adai', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('adai');
+      expect(result).toBe(2);
+    });
+
+    // it('Word: adaize', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('adaize');
+    //   expect(result).toBe(2);
+    // });
+
+    it('Word: Adelaide', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Adelaide');
+      expect(result).toBe(3);
+    });
+
+    it('Word: again', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('again');
+      expect(result).toBe(2);
+    });
+
+    it('Word: agelaius', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('agelaius');
+      expect(result).toBe(4);
+    });
+
+    it('Word: Aglaia', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Aglaia');
+      expect(result).toBe(3);
+    });
+
+    it('Word: agpaite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('agpaite');
+      expect(result).toBe(3);
+    });
+
+    it('Word: agpaitic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('agpaitic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: ahaaina', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ahaaina');
+      expect(result).toBe(4);
+    });
+
+    it('Word: aiblins', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiblins');
+      expect(result).toBe(2);
+    });
+
+    // it('Word: aichmophobia', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aichmophobia');
+    //   expect(result).toBe(5);
+    // });
+
+    it('Word: aid', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aid');
+      expect(result).toBe(1);
+    });
+
+    it('Word: aide', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aide');
+      expect(result).toBe(1);
+    });
+
+    it('Word: aided', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aided');
+      expect(result).toBe(2);
+    });
+
+    // it('Word: aiguille', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguille');
+    //   expect(result).toBe(2);
+    // });
+
+    // it('Word: aiguillesque', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguillesque');
+    //   expect(result).toBe(3);
+    // });
+
+    // it('Word: aiguillette', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguillette');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: aikinite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aikinite');
+      expect(result).toBe(3);
+    });
+
+    // it('Word: aioli', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aioli');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: aitch', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aitch');
+      expect(result).toBe(1);
+    });
+
+    it('Word: aitches', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aitches');
+      expect(result).toBe(2);
+    });
+
+    it('Word: alaite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('alaite');
+      expect(result).toBe(3);
+    });
+
+    it('Word: Alcaic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Alcaic');
+      expect(result).toBe(3);
+    });
+
+    // it('Word: alcaide', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('alcaide');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: algebraic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraic');
+      expect(result).toBe(4);
+    });
+
+    it('Word: algebraical', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraical');
+      expect(result).toBe(5);
+    });
+
+    it('Word: algebraically', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraically');
+      expect(result).toBe(6);
+    });
+
+    // it('Word: algebraization', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraization');
+    //   expect(result).toBe(6);
+    // });
+
+    it('Word: algebraize', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraize');
+      expect(result).toBe(4);
+    });
+
+    it('Word: algebraized', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraized');
+      expect(result).toBe(4);
+    });
+
+    it('Word: algebraizing', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraizing');
+      expect(result).toBe(5);
+    });
+
+    // it('Word: antiaircraft', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('antiaircraft');
+    //   expect(result).toBe(4);
+    // });
+
+    it('Word: apotropaism', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('apotropaism');
+      expect(result).toBe(5);
+    });
+
+    it('Word: appraise', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('appraise');
+      expect(result).toBe(2);
+    });
+
+    it('Word: appraises', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('appraises');
+      expect(result).toBe(3);
+    });
+
+    it('Word: araise', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('araise');
+      expect(result).toBe(2);
+    });
+
+    it('Word: araises', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('araises');
+      expect(result).toBe(3);
+    });
+
+    it('Word: arakawaite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('arakawaite');
+      expect(result).toBe(5);
+    });
+
+    it('Word: azerbaijanese', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('azerbaijanese');
+      expect(result).toBe(5);
+    });
+
+    // it('Word: Baianism', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Baianism');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: balalaika', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('balalaika');
+      expect(result).toBe(4);
+    });
+
+    // it('Word: billionaire', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('billionaire');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: bohairic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('bohairic');
+      expect(result).toBe(3);
+    });
+
+    it('Word: bonailie', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('bonailie');
+      expect(result).toBe(3);
+    });
+
+    it('Word: braid', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('braid');
+      expect(result).toBe(1);
+    });
+
+    // it('Word: Braille', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Braille');
+    //   expect(result).toBe(1);
+    // });
+
+    // it('Word: Brailled', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Brailled');
+    //   expect(result).toBe(1);
+    // });
+
+    it('Word: capercaillie', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('capercaillie');
+      expect(result).toBe(4);
+    });
+
+    it('Word: capillaire', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('capillaire');
+      expect(result).toBe(3);
+    });
+
+    it('Word: caraibe', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('caraibe');
+      expect(result).toBe(2);
+    });
+
+    it('Word: cataian', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('cataian');
+      expect(result).toBe(3);
+    });
+
+    it('Word: claik', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('claik');
+      expect(result).toBe(1);
+    });
+
+    it('Word: claim', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('claim');
+      expect(result).toBe(1);
+    });
+
+    // it('Word: coaita', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('coaita');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: Cordaites', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Cordaites');
+      expect(result).toBe(3);
+    });
+
+    it('Word: praise', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praise');
+      expect(result).toBe(1);
+    });
+
+    it('Word: praises', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praises');
+      expect(result).toBe(2);
+    });
+
+    it('Word: raise', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('raise');
+      expect(result).toBe(1);
+    });
+
+    it('Word: raises', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('raises');
+      expect(result).toBe(2);
+    });
+
+    it('Word: said', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('said');
+      expect(result).toBe(1);
+    });
+
+    it('Word: stain', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('stain');
+      expect(result).toBe(1);
+    });
+  });
+
+  describe('ee', () => {
+    it('Word: breeze', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('breeze');
+      expect(result).toBe(1);
+    });
   });
 
   describe('Words with trailing suffixes after a vowel: ', () => {
+    it('Word: agpaite', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('agpaite');
+      expect(result).toBe(3);
+    });
+
+    it('Word: agpaitic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('agpaitic');
+      expect(result).toBe(4);
+    });
+
     it('Word: virtuous', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('virtuous');
       expect(result).toBe(3);
@@ -2512,4 +2867,123 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(2);
     });
   });
+
+  // describe('Problematic Words', () => {
+      // it('Word: aioli', () => {
+      //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aioli');
+      //   expect(result).toBe(3);
+      // });
+
+  //   it('Word: abovesaid', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('abovesaid');
+  //     expect(result).toBe(3);
+  //   });
+
+      // // e is not silent ending
+      // it('Word: alcaide', () => {
+      //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('alcaide');
+      //   expect(result).toBe(3);
+      // });
+
+    // it('Word: algebraization', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('algebraization');
+    //   expect(result).toBe(6);
+    // });
+
+    // it('Word: antiaircraft', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('antiaircraft');
+    //   expect(result).toBe(4);
+    // });
+
+    // it('Word: Baianism', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Baianism');
+    //   expect(result).toBe(3);
+    // });
+
+  //   it('Word: gabriella', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('gabriella');
+  //     expect(result).toBe(4);
+  //   });
+
+  //   it('Word: clique', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('clique');
+  //     expect(result).toBe(1);
+  //   });
+
+  //   it('Word: coach', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('coach');
+  //     expect(result).toBe(1);
+  //   });
+
+  //   it('Word: villette', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('villette');
+  //     expect(result).toBe(2);
+  //   });
+
+  //   it('Word: Caribbean', () => {
+  //     const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Caribbean');
+  //     expect(result).toBe(4);
+  //   });
+
+  //   it('Word: acrasieae', () => {
+  //     const result = Syllable
+  //     DictionaryService.countSyllablesByCountingKeyVowels2('acrasieae');
+  //     expect(result).toBe(5);
+  //   });
+
+  //   it('Word: tetraamylose', () => {
+  //     const result = Syllable
+  //     DictionaryService.countSyllablesByCountingKeyVowels2('tetraamylose');
+  //     expect(result).toBe(5);
+  //   });
+
+      // // silent ize ending
+      // it('Word: adaize', () => {
+      //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('adaize');
+      //   expect(result).toBe(2);
+      // });
+
+      // // silent ille ending
+      // it('Word: aiguille', () => {
+      //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguille');
+      //   expect(result).toBe(2);
+      // });
+
+    // it('Word: Braille', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Braille');
+    //   expect(result).toBe(1);
+    // });
+
+      // // silent esque ending
+    // it('Word: aiguillesque', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguillesque');
+    //   expect(result).toBe(3);
+    // });
+
+    // // silent ette ending
+    // it('Word: aiguillette', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('aiguillette');
+    //   expect(result).toBe(3);
+    // });
+
+    // it('Word: ache', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ache');
+    //   expect(result).toBe(1);
+    // });
+
+    // it('Word: coaita', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('coaita');
+    //   expect(result).toBe(3);
+    // });
+
+    it('Word: challenge', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('challenge');
+      expect(result).toBe(2);
+    });
+
+    it('Word: champagne', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('champagne');
+      expect(result).toBe(2);
+    });
+  // });
 });

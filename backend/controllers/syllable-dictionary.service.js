@@ -397,11 +397,11 @@ function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(subs
   }
 
   // ! -ian not included
-  if (substring.match(new RegExp('[aeiouy](acy|ant|ary|ate|eer|est|ify|ile|ing|ion|ise|ish|ism|ist|ity|ive|ize|ous)$'))) {
+  if (substring.match(new RegExp('[aeiouy](acy|ant|ary|ate|eer|est|ify|ile|ing|ian|ion|ise|ish|ism|ist|ite|ity|ive|ize|ous)$'))) {
     return true;
   }
 
-  if (substring.match(new RegExp('[aeiouy](able|ance|ence|ible|ical|ious|itis|osis)$'))) {
+  if (substring.match(new RegExp('[aeiouy](able|ance|ence|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
     return true;
   }
 
@@ -422,7 +422,7 @@ function does_the_special_e_s_ending_rule_apply(substring) {
 }
 
 function does_the_standard_silent_e_ending_rule_apply(substring) {
-  return substring.match(new RegExp('.[aeiouy][^aeiou]e|aste|..[cs]e'));
+  return substring.match(new RegExp('.[aeiouy][^aeiou]e|aste|..[cs]e|.nge|.gne'));
 }
 
 function does_the_standard_silent_e_d_ending_rule_apply(substring) {
