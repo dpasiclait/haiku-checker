@@ -2798,6 +2798,16 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(3);
     });
 
+    it('Word: dadaism', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('dadaism');
+      expect(result).toBe(3);
+    });
+
+    it('Word: dadaistic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('dadaistic');
+      expect(result).toBe(4);
+    });
+
     it('Word: praise', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praise');
       expect(result).toBe(1);
@@ -2983,6 +2993,26 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
 
     it('Word: champagne', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('champagne');
+      expect(result).toBe(2);
+    });
+
+    it('Word: beach', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('beach');
+      expect(result).toBe(1);
+    });
+
+    it('Word: beaches', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('beaches');
+      expect(result).toBe(2);
+    });
+
+    it('Word: peach', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('peach');
+      expect(result).toBe(1);
+    });
+
+    it('Word: peaches', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('peaches');
       expect(result).toBe(2);
     });
   // });

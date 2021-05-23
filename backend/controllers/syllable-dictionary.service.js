@@ -406,7 +406,7 @@ function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(subs
   }
 
   // ! -ology not included
-  if (substring.match(new RegExp('[aeiouy](esque)$'))) {
+  if (substring.match(new RegExp('[aeiouy](esque|istic)$'))) {
     return true;
   }
 
