@@ -283,7 +283,7 @@ exports.countSyllablesByCountingKeyVowels2 = (word) => {
     substring1 = get_substring(letters, i - 3, i);
     let substring2 = get_substring(letters, i - 3, i + 1);
     if (
-      ((i >= letters.length - 5 && i <= letters.length - 2) && does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(suffixSubstring)) ||
+      ((i >= letters.length - 6 && i <= letters.length - 2) && does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(suffixSubstring)) ||
       ((i === letters.length - 1) && does_the_special_e_ending_rule_apply(substring1)) ||
       ((i === letters.length - 2) && does_the_special_e_s_ending_rule_apply(substring2))
     ) {
@@ -401,12 +401,24 @@ function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(subs
     return true;
   }
 
-  if (substring.match(new RegExp('[aeiouy](able|ance|ence|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
+  if (substring.match(new RegExp('[aeiouy](iance|ience)$'))) {
+    return true;
+  }
+
+  if (substring.match(new RegExp('[aeouy](able|ance|ence|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
+    return true;
+  }
+
+  if (substring.match(new RegExp('[i](able|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
     return true;
   }
 
   // ! -ology not included
-  if (substring.match(new RegExp('[aeiouy](esque|istic)$'))) {
+  if (substring.match(new RegExp('[aeiouy](esque|istic|izing)$'))) {
+    return true;
+  }
+
+  if (substring.match(new RegExp('[aeiouy]ically$'))) {
     return true;
   }
 
