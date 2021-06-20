@@ -2898,6 +2898,101 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(2);
     });
 
+    it('Word: gaieties', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('gaieties');
+      expect(result).toBe(3);
+    });
+
+    it('Word: Galbraith', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Galbraith');
+      expect(result).toBe(2);
+    });
+
+    // it('Word: galbraithian', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('galbraithian');
+    //   expect(result).toBe(4);
+    // });
+
+    it('Word: gervais', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('gervais');
+      expect(result).toBe(2);
+    });
+
+    it('Word: ghaist', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('ghaist');
+      expect(result).toBe(1);
+    });
+
+    it('Word: graith', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('graith');
+      expect(result).toBe(1);
+    });
+
+    it('Word: habutai', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('habutai');
+      expect(result).toBe(3);
+    });
+
+    it('Word: haiari', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('haiari');
+      expect(result).toBe(3);
+    });
+
+    it('Word: haiathalah', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('haiathalah');
+      expect(result).toBe(4);
+    });
+
+    it('Word: haiku', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('haiku');
+      expect(result).toBe(2);
+    });
+
+    it('Word: hainai', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('hainai');
+      expect(result).toBe(2);
+    });
+
+    it('Word: havaiki', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('havaiki');
+      expect(result).toBe(3);
+    });
+
+    // it('Word: havaikian', () => {
+    //   const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('havaikian');
+    //   expect(result).toBe(4);
+    // });
+
+    it('Word: Hebraic', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Hebraic');
+      expect(result).toBe(3);
+    });
+
+    it('Word: hebraica', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('hebraica');
+      expect(result).toBe(4);
+    });
+
+    it('Word: Hebraically', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Hebraically');
+      expect(result).toBe(5);
+    });
+
+    it('Word: Hebraization', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Hebraization');
+      expect(result).toBe(5);
+    });
+
+    it('Word: Hebraize', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Hebraize');
+      expect(result).toBe(3);
+    });
+
+    it('Word: Hebraizer', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('Hebraizer');
+      expect(result).toBe(4);
+    });
+
     it('Word: praise', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praise');
       expect(result).toBe(1);

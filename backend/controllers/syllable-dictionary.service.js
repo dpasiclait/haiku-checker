@@ -405,11 +405,11 @@ function does_a_suffix_beginning_in_a_vowel_trails_after_a_vowel_rule_apply(subs
     return true;
   }
 
-  if (substring.match(new RegExp('[aeouy](able|ance|ence|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
+  if (substring.match(new RegExp('[aeouy](able|ance|ence|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|izer|izes|osis)$'))) {
     return true;
   }
 
-  if (substring.match(new RegExp('[i](able|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|osis)$'))) {
+  if (substring.match(new RegExp('[i](able|ians|ible|ical|ions|ious|isms|ists|ites|itic|itis|ized|izer|izes|osis)$'))) {
     return true;
   }
 
