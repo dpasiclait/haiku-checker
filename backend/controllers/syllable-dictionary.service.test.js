@@ -2993,6 +2993,16 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(4);
     });
 
+    it('Word: hennaing', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('hennaing');
+      expect(result).toBe(3);
+    });
+
+    it('Word: hydroairplane', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('hydroairplane');
+      expect(result).toBe(4);
+    });
+
     it('Word: praise', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praise');
       expect(result).toBe(1);

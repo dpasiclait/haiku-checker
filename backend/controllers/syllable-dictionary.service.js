@@ -325,29 +325,24 @@ function does_special_ae_vowel_exception_rule_apply(substring) {
 function does_a_prefix_ending_in_a_vowel_precede_a_vowel_rule_apply(substring){
   // ! be- not included
   if(substring.match(new RegExp('^(bi|co|de|di|du|eu|re)[aeiouy]'))) {
-    // console.log('(bi|co|de|di|du|eu|re)[aeiouy]');
     return true;
   }
 
   // ! aqu- bio- dia- equ- uni- zoo- not included
   if (substring.match(new RegExp('^(dia|epi|exo|iso|neo|pre|pro|tri|uni)[aeiouy]'))) {
-    // console.log('(dia|epi|exo|iso|neo|pre|pro|tri|uni)[aeiouy]');
     return true;
   }
 
   // ! soci- not included
   if(substring.match(new RegExp('^(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|meta|mega|mono|nano|octo|omni|para|peri|poly|pyro|semi|tele|tera)[aeiouy]'))) {
-    // console.log('(ambi|ante|anti|auto|bene|deca|ecto|fore|giga|hemi|homo|hypo|kilo|medi|mega|mono|nano|octo|omni|para|peri|poly|semi|tele|tera)[aeiouy]');
     return true;
   }
 
-  if(substring.match(new RegExp('^(centi|extra|extro|infra|intra|macro|micro|milli|multi|ortho|photo|retro|supra|tetra|ultra)[aeiouy]'))) {
-    // console.log('(centi|extra|extro|infra|intra|macro|micro|milli|multi|ortho|photo|retro|supra|tetra|ultra)[aeiouy]');
+  if(substring.match(new RegExp('^(centi|extra|extro|hydro|infra|intra|macro|micro|milli|multi|ortho|photo|retro|supra|tetra|ultra)[aeiouy]'))) {
     return true;
   }
 
   if(substring.match(new RegExp('^(chrono|contra|hetero|pseudo|psycho)[aeiouy]'))) {
-    // console.log('(chrono|contra|hetero)[aeiouy]');
     return true;
   }
 
