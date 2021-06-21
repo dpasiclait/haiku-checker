@@ -3003,6 +3003,11 @@ describe('Testing countSyllablesByCountingKeyVowels', () => {
       expect(result).toBe(4);
     });
 
+    it('Word: interavailability', () => {
+      const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('interavailability');
+      expect(result).toBe(8);
+    });
+
     it('Word: praise', () => {
       const result = SyllableDictionaryService.countSyllablesByCountingKeyVowels2('praise');
       expect(result).toBe(1);
