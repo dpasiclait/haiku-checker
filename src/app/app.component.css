@@ -9,3 +9,39 @@ app-header,
 app-footer {
   height: 10%;
 }
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body{
+  height: 100%;
+  width : 100%;
+}
+
+.content {
+  min-height: fit-content;
+  height: 100%;
+  width : 100%;
+}
+
+@media screen and (max-height: 415px) {
+  .content {
+    height: fit-content;
+    width : 100%;
+  }
+}
+
+.content header,
+.content footer {
+  min-height: fit-content;
+  height: 10%;
+  width : 100%;
+}
+
+.content main {
+  min-height: fit-content;
+  height: 80%;
+  width : 100%;
+}
