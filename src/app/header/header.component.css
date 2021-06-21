@@ -13,6 +13,11 @@
   text-decoration: none;
 }
 
+.header-content mat-toolbar a .version{
+  color          : #ffd633;
+  font-size: small;
+}
+
 .header-content mat-toolbar .spacer {
   flex: 1 1 auto;
 }
