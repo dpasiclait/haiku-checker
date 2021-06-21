@@ -1,69 +1,15 @@
-mat-card-title {
-  margin     : auto;
-  color      : #3a243b;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size  : x-large;
-  font-weight: bold;
+.main-content {
+  min-height: fit-content;
+  height: 100%;
+  padding: 10px 10%;
 }
 
-mat-card-subtitle {
-  margin     : auto 5% auto 5%;
-  color      : #9b619e;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size  : x-large;
+.main-content mat-card#container {
+  min-height: fit-content;
+  max-height: 85%;
 }
 
-mat-card-content {
-  margin     : auto;
-  color      : #3a243b;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-size  : x-large;
-}
-
-span.indent {
-  margin-left: 5%;
-}
-
-.mat-display-1 {
-  width      : 80%;
-  text-align : justify;
-  padding-top: 1rem;
-  font-size  : xx-large;
-}
-
-.content {
-  margin-top: 1rem;
-  width     : 80%;
-  box-shadow: 5px 5px 4px #9b619e;
-}
-
-.right-card {
-  margin-left: 10%;
-}
-
-.right-card mat-card-title,
-.right-card mat-card-subtitle {
-  text-align: right;
-}
-
-.right-card mat-card-content {
-  text-align: left;
-}
-
-.left-card {
-  margin-left: 10px;
-}
-
-.left-card mat-card-title,
-.left-card mat-card-subtitle {
-  text-align: left;
-}
-
-.left-card mat-card-content {
-  text-align: right;
-}
-
-.scroll {
+.main-content mat-card#container.scroll {
   height          : 95%;
   background-color: #ffd633;
   padding         : 15px;
@@ -72,23 +18,87 @@ span.indent {
   box-shadow      : 5px 5px 4px #9b619e;
 }
 
-.indent {
+.main-content mat-card#container mat-card-title,
+.main-content mat-card#container mat-card.content mat-card-title {
+  margin     : auto;
+  color      : #3a243b;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.main-content mat-card#container mat-card-title,
+.main-content mat-card#container mat-card.content mat-card-title,
+.main-content mat-card#container mat-card.content mat-card-subtitle,
+.main-content mat-card#container mat-card.content mat-card-content {
+  font-size  : x-large;
+}
+
+.main-content mat-card#container mat-card-title.mat-display-1 {
+  width: 80%;
+  text-align : justify;
+  padding-top: 1rem;
+  font-size  : xx-large;
+}
+
+.main-content mat-card#container mat-card.content mat-card-subtitle {
+  margin     : auto 5% auto 5%;
+  color      : #9b619e;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+}
+
+.main-content mat-card#container mat-card.content {
+  margin-top: 1rem;
+  width: 80%;
+  box-shadow: 5px 5px 4px #9b619e;
+}
+
+.main-content mat-card#container mat-card.content mat-card-content {
+  margin     : auto;
+  color      : #3a243b;
+  font-family: 'Gabriola', 'Courier New', Courier, monospace;
+}
+
+.main-content mat-card#container mat-card.content mat-card-content span.spacer {
+  margin: 1rem 1rem;
+}
+
+.main-content mat-card#container mat-card.content mat-card-content span.indent {
+  margin-left: 5%;
+}
+
+.main-content mat-card#container mat-card.content mat-card-content p.indent {
   text-indent: 5%;
   margin     : auto;
 }
 
-.cutting-words {
-  color    : #9b619e;
-  font-size: medium;
-  margin   : auto 10% auto auto;
-}
-
-.spacer {
-  margin: 1rem 1rem;
-}
-
-.italicized {
+.main-content mat-card#container mat-card.content mat-card-content .italicized {
   font-weight: bold;
   font-style : italic;
   color      : #9b619e;
+}
+
+.main-content mat-card#container mat-card.right-card {
+  margin-left: 10%;
+}
+
+.main-content mat-card#container mat-card.right-card mat-card-title,
+.main-content mat-card#container mat-card.right-card mat-card-subtitle,
+.main-content mat-card#container mat-card.left-card mat-card-content {
+  text-align: right;
+}
+
+.main-content mat-card#container mat-card.right-card mat-card-content,
+.main-content mat-card#container mat-card.left-card mat-card-title,
+.main-content mat-card#container mat-card.left-card mat-card-subtitle {
+  text-align: left;
+}
+
+.main-content mat-card#container mat-card.left-card {
+  margin-left: 10px;
+}
+
+.main-content mat-card#container mat-card.left-card mat-card-content p.cutting-words {
+  color    : #9b619e;
+  font-size: large;
+  margin   : auto 10% auto auto;
 }
