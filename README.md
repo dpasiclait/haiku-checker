@@ -9,6 +9,9 @@ With this web application, the headaches and troubles of writing a haiku with th
 1. Script reference for fontawesome.js was replaced by link to incorporated stylesheet fontawesome.min.css within assets folder
 2. Although no code had to change for this bug, domain name forwarding with masking was disabled to allow external links to Github and LinkedIn to redirect without frame-ancestor rejections
 
+### v1.0.2
+1. Responsive design, adapting to most modern devices. This also extends to landscape mode on mobile phones.
+
 ## Interested In the Behind the Scenes
 This project is a small MEAN Stack project using:
   1. [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0 for frontend development
