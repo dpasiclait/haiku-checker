@@ -1,4 +1,4 @@
-# HaikuChecker v1.0.1
+# HaikuChecker v1.0.2
 Verify the syllable count of your haiku
 
 ## Description
