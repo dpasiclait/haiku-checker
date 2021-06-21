@@ -1,13 +1,21 @@
-/* @import url("https://kit.fontawesome.com/a076d05399.js"); */
+.footer-content {
+  min-height: fit-content;
+  width: 100%;
+  height: 100%;
+}
 
-a {
+.footer-content mat-toolbar {
+  height: inherit;
+}
+
+.footer-content mat-toolbar a {
   text-decoration: none;
 }
 
-.spacer {
-  flex: 1 1 auto;
+.footer-content mat-toolbar .license {
+  font-size: small;
 }
 
-.license {
-  font-size: small;
+.footer-content mat-toolbar .spacer {
+  flex: 1 1 auto;
 }
