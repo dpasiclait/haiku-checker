@@ -1,8 +1,18 @@
-a {
+.header-content {
+  min-height: fit-content;
+  height: 100%;
+  width: 100%;
+}
+
+.header-content mat-toolbar {
+  height: inherit;
+}
+
+.header-content mat-toolbar a {
   color          : white;
   text-decoration: none;
 }
 
-.spacer {
+.header-content mat-toolbar .spacer {
   flex: 1 1 auto;
 }
