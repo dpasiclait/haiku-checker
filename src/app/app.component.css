@@ -1,21 +1,10 @@
-main {
-  height: 79.7%;
-  width : 80%;
-  margin: 1rem auto;
-  /* 1rem = 16px to be put on top*/
-}
-
-app-header,
-app-footer {
-  height: 10%;
-}
 * {
   margin: 0px;
   padding: 0px;
 }
 
 html,
-body{
+body {
   height: 100%;
   width : 100%;
 }
@@ -24,6 +13,8 @@ body{
   min-height: fit-content;
   height: 100%;
   width : 100%;
+  background-image: url('../assets/img/parchement-background.jpg');
+  background-color: #cccccc;
 }
 
 @media screen and (max-height: 415px) {
@@ -44,4 +35,5 @@ body{
   min-height: fit-content;
   height: 80%;
   width : 100%;
+  padding: 5px 0px;
 }
