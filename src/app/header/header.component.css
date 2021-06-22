@@ -1,23 +1,47 @@
 .header-content {
-  min-height: fit-content;
   height: 100%;
   width: 100%;
+  display: flex;
 }
 
-.header-content mat-toolbar {
-  height: inherit;
+@media screen and (max-height: 415px) {
+  .header-content {
+    padding: 5px;
+  }
 }
 
-.header-content mat-toolbar a {
-  color          : white;
+.header-content .home-button,
+.header-content .facts-button {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header-content .home-button a {
   text-decoration: none;
+  color: black;
+  font-size: large;
+  font-weight: bold;
 }
 
-.header-content mat-toolbar a .version{
-  color          : #ffd633;
+.header-content .home-button a .version {
   font-size: small;
+  font-weight: bold;
+  color: #FFD021;
 }
 
-.header-content mat-toolbar .spacer {
+.header-content .spacer {
   flex: 1 1 auto;
+}
+
+.header-content .facts-button button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: small;
+  font-weight: bold;
+}
+
+.header-content .facts-button button:hover {
+  color: #FFD021;
 }

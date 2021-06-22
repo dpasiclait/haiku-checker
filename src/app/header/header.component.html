@@ -1,15 +1,13 @@
-<div class="header-content">
-  <mat-toolbar role="heading" color="primary">
-    <span>
-      <a routerLink="/">Haiku Checker <span class="version">{{version}}</span></a>
-    </span>
+<div class="header-content halloween-orange">
+  <div class="home-button">
+    <a routerLink="/">Haiku Checker <span class="version">{{version}}</span></a>
+  </div>
 
-    <span class="spacer"></span>
+  <div class="spacer"></div>
 
-    <span>
-      <button mat-button routerLink="/facts" routerLinkActive="mat-accent">
-        What is a Haiku?
-      </button>
-    </span>
-  </mat-toolbar>
+  <div class="facts-button">
+    <button routerLink="/facts">
+      What is a Haiku?
+  </button>
+  </div>
 </div>
