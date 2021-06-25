@@ -5,12 +5,6 @@
   display: flex;
 }
 
-@media screen and (max-height: 415px) {
-  .footer-content {
-    padding: 15px 5px;
-  }
-}
-
 .footer-content div a {
   text-decoration: none;
   color: black;
@@ -42,4 +36,10 @@
 
 .footer-content .github-button a:hover {
   color: #E34427;
+}
+
+@media screen and (max-height: 415px) {
+  .footer-content {
+    padding: 15px 5px;
+  }
 }

@@ -4,12 +4,6 @@
   display: flex;
 }
 
-@media screen and (max-height: 415px) {
-  .header-content {
-    padding: 5px;
-  }
-}
-
 .header-content .home-button,
 .header-content .facts-button {
   padding: 0px 20px;
@@ -44,4 +38,14 @@
 
 .header-content .facts-button button:hover {
   color: #FFD021;
+}
+
+@media screen and (max-height: 415px) {
+  .header-content {
+    padding: 5px;
+  }
+
+  .header-content .home-button a {
+    font-size: medium;
+  }
 }

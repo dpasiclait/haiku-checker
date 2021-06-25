@@ -63,13 +63,12 @@
 .new-content {
   min-height: fit-content;
   height: 100%;
-  width: inherit;
+  width: 100%;
   display: flex;
 }
 
 .new-content .koi-pond,
 .new-content .haiku-form {
-  border: 1px solid blue;
   height: 100%;
   width: 100%;
   display: flex;
@@ -116,4 +115,32 @@
 .new-content .koi-pond .koi-fish img {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-height: 700px) {
+  .new-content {
+    flex-direction: column;
+  }
+
+  .new-content .koi-pond {
+    order: 2;
+  }
+
+  .new-content .haiku-form {
+    order: 1;
+  }
+
+  .new-content .koi-pond .koi-fish {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    animation: rotate 10s linear 30ms infinite normal none;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .new-content {
+    flex-direction: unset;
+    padding: 2px 0px;
+  }
 }
