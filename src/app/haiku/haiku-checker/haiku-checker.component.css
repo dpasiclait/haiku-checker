@@ -201,7 +201,11 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    animation: rotate 10s linear 30ms infinite normal none;
+    animation: rotate 10s linear 30ms infinite normal none running;
+  }
+
+  .new-content .koi-pond .koi-fish:hover {
+    animation: rotate 10s linear 30ms infinite normal none paused;
   }
 }
 
