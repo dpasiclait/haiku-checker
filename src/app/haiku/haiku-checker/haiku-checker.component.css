@@ -67,8 +67,7 @@
   display: flex;
 }
 
-.new-content .koi-pond,
-.new-content .haiku-form {
+.new-content .koi-pond {
   height: 100%;
   width: 100%;
   display: flex;
@@ -89,6 +88,74 @@
 .new-content .koi-pond .koi-fish:hover {
   animation: rotate 10s linear 30ms infinite normal none running,
               grow 3s linear 30ms infinite normal none running;
+}
+
+.new-content .haiku {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 5px 10px 0px 10px;
+  border: 1px solid blue;
+}
+
+.new-content .haiku h2 {
+  border: 1px solid red;
+  text-align: center;
+  height: fit-content;
+  margin-bottom: 5px;
+}
+
+.new-content .haiku .haiku-submission-form {
+  border: 1px solid red;
+  height: 85%;
+  margin: 0px;
+  padding: 5px;
+}
+
+.new-content .haiku .haiku-submission-form .instructions {
+  border: 1px solid green;
+  height: 10%;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools {
+  border: 1px solid green;
+  height: 90%;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form {
+  border: 1px solid black;
+  height: 90%;
+  width: 90%;
+  padding: 5px;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row {
+  border: 1px solid orange;
+  height: 24.5%;
+  width: 100%;
+  display: flex ;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .indicator {
+  border: 1px solid purple;
+  height: 100%;
+  width: 30%;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .verse {
+  border: 1px solid hotpink;
+  height: 100%;
+  width: 69%;
 }
 
 @keyframes rotate {
@@ -126,7 +193,7 @@
     order: 2;
   }
 
-  .new-content .haiku-form {
+  .new-content .haiku {
     order: 1;
   }
 
