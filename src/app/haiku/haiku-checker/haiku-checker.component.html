@@ -84,8 +84,8 @@
 
             </div>
 
-            <div class="verse">
-
+            <div class="verse center-children">
+              <input type="text" id="first-verse" class="verse-input" placeholder="This is the first line" name="firstInput" ngModel #firstInput="ngModel">
             </div>
 
           </div>
@@ -96,8 +96,8 @@
 
             </div>
 
-            <div class="verse">
-
+            <div class="verse center-children">
+              <input type="text" id="second-verse" class="verse-input" placeholder="followed by the second line" name="secondInput" ngModel #secondInput="ngModel">
             </div>
 
           </div>
@@ -108,14 +108,15 @@
 
             </div>
 
-            <div class="verse">
-
+            <div class="verse center-children">
+              <input type="text" id="third-verse" class="verse-input" placeholder="with the third to end" name="thirdInput" ngModel #thirdInput="ngModel">
             </div>
 
           </div>
 
-          <div class="row">
-
+          <div class="row center-children">
+            <button type="submit">Publish</button>
+            <button type="reset">Clear</button>
           </div>
 
         </form>
