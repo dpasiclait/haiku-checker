@@ -20,7 +20,11 @@ import {
 @Component({
   selector   : 'app-haiku-checker',
   templateUrl: './haiku-checker.component.html',
-  styleUrls  : ['./haiku-checker.component.css', '../../../assets/css/color-scheme.css']
+  styleUrls  : [
+    './haiku-checker.component.css',
+    '../../../assets/css/color-scheme.css',
+    '../../../assets/css/styles.css'
+  ]
 })
 export class HaikuCheckerComponent {
   firstCount : number = 0;
