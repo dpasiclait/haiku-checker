@@ -183,6 +183,15 @@
   font-size: 20px;
 }
 
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row button {
+  width: 100px;
+  font-size: 15px;
+}
+
+.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .spacer {
+  width: 30%;
+}
+
 @media screen and (max-height: 700px) {
   .new-content {
     flex-direction: column;

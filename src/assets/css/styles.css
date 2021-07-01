@@ -4,3 +4,39 @@
   align-items: center;
   justify-content: center;
 }
+
+.primary-button {
+  border-color: #F16323;
+  background-color: #F16323;
+  color: black;
+}
+
+.primary-button:hover {
+  border-color: black;
+  background-color: black;
+  color: #F16323;
+  /* box-shadow: #F16323; */
+}
+
+.secondary-button {
+  border-color: #FFD021;
+  background-color: #FFD021;
+  color: black;
+}
+
+.secondary-button:hover {
+  border-color: black;
+  background-color: black;
+  color: #FFD021;
+  /* box-shadow: #FFD021; */
+}
+
+.primary-button,
+.secondary-button {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
