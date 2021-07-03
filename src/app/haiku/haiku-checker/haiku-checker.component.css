@@ -118,7 +118,7 @@
   width: 100%;
   display: block;
   padding: 5px 10px 0px 10px;
-  border: 1px solid blue;
+  border: 1px solid #E34427;
 }
 
 .new-content .haiku h2 {
@@ -149,33 +149,47 @@
   margin: 0px;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form {
+#haiku-form {
   border: 1px solid black;
   height: 90%;
   width: 90%;
   padding: 5px;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row {
+#haiku-form .row {
   border: 1px solid orange;
   height: 24.5%;
   width: 100%;
   display: flex ;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .indicator {
+#haiku-form .row .indicator {
   border: 1px solid purple;
   height: 100%;
   width: 30%;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .verse {
+#haiku-form .row .verse {
   border: 1px solid hotpink;
   height: 100%;
   width: 69%;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .verse .verse-input {
+#haiku-form .row .indicator .verse-output {
+  height: 90px;
+  width: 90px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom right, #E34427 30%, #FFD021, #F2F3F4);
+  transition: 1s;
+}
+
+#haiku-form .row .indicator .verse-output .count {
+  z-index: 2;
+  font-size: 40px;
+}
+
+#haiku-form .row .verse .verse-input {
   width: 90%;
   border: none;
   border-bottom: 1px solid black;
@@ -183,12 +197,12 @@
   font-size: 20px;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row button {
+#haiku-form .row button {
   width: 100px;
   font-size: 15px;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools #haiku-form .row .spacer {
+#haiku-form .row .spacer {
   width: 30%;
 }
 

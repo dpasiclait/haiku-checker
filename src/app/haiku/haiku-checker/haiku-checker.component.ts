@@ -22,6 +22,7 @@ import {
   templateUrl: './haiku-checker.component.html',
   styleUrls  : [
     './haiku-checker.component.css',
+    './blob.css',
     '../../../assets/css/color-scheme.css',
     '../../../assets/css/styles.css'
   ]
