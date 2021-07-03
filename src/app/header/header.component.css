@@ -14,12 +14,11 @@
 .header-content .home-button a {
   text-decoration: none;
   color: black;
-  font-size: large;
   font-weight: bold;
 }
 
 .header-content .home-button a .version {
-  font-size: small;
+  font-size: x-large;
   font-weight: bold;
   color: #FFD021;
 }
@@ -32,7 +31,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: small;
+  font-size: larger;
   font-weight: bold;
 }
 
@@ -46,6 +45,10 @@
   }
 
   .header-content .home-button a {
-    font-size: medium;
+    font-size: x-large;
+  }
+
+  .header-content .home-button a .version{
+    font-size: larger;
   }
 }
