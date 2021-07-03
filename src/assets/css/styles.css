@@ -39,4 +39,16 @@
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+  font-family: 'Gustello';
+  font-size: xx-large;
+}
+
+.gustello-font {
+  font-family: 'Gustello';
+  font-size: xx-large;
+}
+
+@font-face {
+  font-family: 'Gustello';
+  src: url('../custom-fonts/Gustolle-400.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
