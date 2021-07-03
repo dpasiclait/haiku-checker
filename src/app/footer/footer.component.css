@@ -17,10 +17,6 @@
   padding: 0px 20px;
 }
 
-.footer-content .license {
-  font-size: medium;
-}
-
 .footer-content .license span a{
   color: #E34427;
 }
@@ -42,4 +38,9 @@
   .footer-content {
     padding: 15px 5px;
   }
+
+  .footer-content .license {
+    font-size: x-large;
+  }
+
 }
