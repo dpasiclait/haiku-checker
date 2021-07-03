@@ -116,23 +116,20 @@
 .new-content .haiku {
   height: 100%;
   width: 100%;
-  display: block;
   padding: 5px 10px 0px 10px;
   border: 1px solid #E34427;
-}
-
-.new-content .haiku h2 {
-  border: 1px solid red;
-  text-align: center;
-  height: fit-content;
-  margin-bottom: 5px;
 }
 
 .new-content .haiku .haiku-submission-form {
   border: 1px solid red;
   height: 85%;
+  min-width: 600px;
   margin: 0px;
   padding: 5px;
+  background-color: blanchedalmond;
+  box-shadow: 2px 2px 2px 2px darkgray;
+  border-radius: 30px;
+  mix-blend-mode: multiply;
 }
 
 .new-content .haiku .haiku-submission-form .instructions {
