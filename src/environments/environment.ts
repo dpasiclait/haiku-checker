@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl    : 'http://localhost:3000/api/syllable_dictionary',
+  apiUrl    : '',
   Version: "v1.0.2"
 };
 
