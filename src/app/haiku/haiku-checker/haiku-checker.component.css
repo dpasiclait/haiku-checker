@@ -184,6 +184,7 @@
   z-index: 2;
   font-family: 'Gustello';
   font-size: 80px;
+	-webkit-text-stroke: 1px #F2F3F4;
 }
 
 #haiku-form .row .verse .verse-input {
