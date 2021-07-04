@@ -252,7 +252,7 @@
   }
 }
 
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 376px) {
   .new-content {
     padding: 0px;
     display: flex;
@@ -280,10 +280,10 @@
 
   .new-content .haiku .haiku-submission-form {
     min-width: 90%;
+    mix-blend-mode: normal;
   }
 
   #haiku-form .row .indicator {
-    border: 1px solid purple;
     height: 100%;
     width: 30%;
   }
@@ -307,7 +307,6 @@
     width: fit-contents;
   }
 }
-
 
 /*
 @media screen and (max-height: 700px) {

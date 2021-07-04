@@ -34,10 +34,21 @@
   color: #E34427;
 }
 
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 376px) {
   .footer-content {
     height: 50px;
   }
+
+  .footer-content .license,
+  .footer-content .github-button {
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  /* .footer-content {
+    height: 50px;
+  } */
 
   .footer-content .license,
   .footer-content .github-button {

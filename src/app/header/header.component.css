@@ -39,10 +39,25 @@
   color: #FFD021;
 }
 
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 376px) {
   .header-content {
     height: 50px;
   }
+
+  .header-content .home-button,
+  .header-content .facts-button {
+    padding: 0px 10px;
+  }
+
+  .header-content .home-button a .version {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  /* .header-content {
+    height: 50px;
+  } */
 
   .header-content .home-button,
   .header-content .facts-button {
