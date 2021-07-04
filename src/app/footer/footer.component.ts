@@ -7,8 +7,7 @@ import {
   templateUrl: './footer.component.html',
   styleUrls  : [
     './footer.component.css',
-    '../../assets/css/color-scheme.css',
-    // '../../assets/css/styles.css'
+    '../../assets/css/color-scheme.css'
   ]
 })
 export class FooterComponent {

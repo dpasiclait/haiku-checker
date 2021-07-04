@@ -8,8 +8,7 @@ import { environment } from "src/environments/environment.prod";
   templateUrl: './header.component.html',
   styleUrls  : [
     './header.component.css',
-    '../../assets/css/color-scheme.css',
-    // '../../assets/css/styles.css'
+    '../../assets/css/color-scheme.css'
 ]
 })
 export class HeaderComponent {
