@@ -39,7 +39,7 @@
   color: #FFD021;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 361px) {
   .header-content {
     height: 50px;
   }

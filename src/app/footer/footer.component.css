@@ -34,7 +34,7 @@
   color: #E34427;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 361px) {
   .footer-content {
     height: 50px;
   }

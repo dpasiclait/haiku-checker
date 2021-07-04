@@ -38,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 361px) {
   .content header,
   .content footer {
     height: auto;
