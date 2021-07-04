@@ -34,7 +34,18 @@
   color: #E34427;
 }
 
-@media screen and (max-height: 415px) {
+@media screen and (max-width: 320px) {
+  .footer-content {
+    height: 50px;
+  }
+
+  .footer-content .license,
+  .footer-content .github-button {
+    padding: 0px 5px;
+  }
+}
+
+/* @media screen and (max-height: 415px) {
   .footer-content {
     padding: 15px 5px;
   }
@@ -43,4 +54,4 @@
     font-size: x-large;
   }
 
-}
+} */

@@ -225,3 +225,27 @@
   left: -36px;
   box-shadow: -2px 2px 2px 2px rgba(255, 255, 255, 0.5);
 }
+
+@media screen and (max-width: 320px) {
+  .blob1 .cell2::before,
+  .blob1 .cell3::before,
+  .blob2 .cell2::before,
+  .blob2 .cell3::before,
+  .blob3 .cell1::before,
+  .blob3 .cell3::before,
+  .blob4 .cell1::before,
+  .blob4 .cell3::before,
+  .blob5 .cell3::before,
+  .blob6 .cell3::before {
+    display: none;
+  }
+
+  .blob4 .cell2::before,
+  .blob6 .cell1::before {
+    left: 0px;
+  }
+
+  .blob6 .cell2::before {
+    height: 20px;
+  }
+}

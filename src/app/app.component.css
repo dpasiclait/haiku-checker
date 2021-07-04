@@ -21,14 +21,30 @@
   border: 1px solid green;
 }
 
-@media screen and (max-width: 1000px) {
-  .content header,
+/* @media screen and (max-width: 1367px) {
+
+} */
+
+@media screen and (max-width: 1024px) {
+  /* .content header,
   .content footer {
     height: 70px;
-  }
+  } */
 
   .content main {
     height: auto;
     min-height: fit-content;
+    width : 99%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content header,
+  .content footer {
+    height: auto;
+  }
+
+  .content {
+    overflow-y: scroll;
   }
 }
