@@ -9,7 +9,7 @@ import { environment } from "src/environments/environment.prod";
   styleUrls  : [
     './header.component.css',
     '../../assets/css/color-scheme.css',
-    '../../assets/css/styles.css'
+    // '../../assets/css/styles.css'
 ]
 })
 export class HeaderComponent {

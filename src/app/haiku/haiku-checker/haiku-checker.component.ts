@@ -24,7 +24,7 @@ import {
     './haiku-checker.component.css',
     './blob.css',
     '../../../assets/css/color-scheme.css',
-    '../../../assets/css/styles.css'
+    // '../../../assets/css/styles.css'
   ]
 })
 export class HaikuCheckerComponent {
