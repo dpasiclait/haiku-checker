@@ -252,7 +252,7 @@
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 415px) {
   .new-content {
     padding: 0px;
     display: flex;

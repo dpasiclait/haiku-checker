@@ -39,7 +39,7 @@
   color: #FFD021;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 415px) {
   .header-content {
     height: 50px;
   }
@@ -55,10 +55,6 @@
 }
 
 @media screen and (max-width: 361px) {
-  /* .header-content {
-    height: 50px;
-  } */
-
   .header-content .home-button,
   .header-content .facts-button {
     padding: 0px 5px;
