@@ -23,8 +23,7 @@ import {
   styleUrls  : [
     './haiku-checker.component.css',
     './blob.css',
-    '../../../assets/css/color-scheme.css',
-    // '../../../assets/css/styles.css'
+    '../../../assets/css/color-scheme.css'
   ]
 })
 export class HaikuCheckerComponent {
@@ -37,9 +36,9 @@ export class HaikuCheckerComponent {
     private dialog      : MatDialog
   ) {}
 
-  // placers two writable best prosing
   checkHaiku(form: NgForm) {
     if (form.invalid) {
+      alert('Please fill the missing verses');
       return;
     };
 
