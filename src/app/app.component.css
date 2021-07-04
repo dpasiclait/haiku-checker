@@ -1,13 +1,4 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
 
-html,
-body {
-  height: 100%;
-  width : 100%;
-}
 
 .content {
   min-height: fit-content;
@@ -30,6 +21,23 @@ body {
   height: 80%;
   width : 100% !important;
   padding: 5px 0px;
+  border: 1px solid green;
+}
+
+@media screen and (min-width: 1000px) {
+  .content {
+    min-height: fit-content;
+    display: block;
+    height: 100%;
+    width : 100%;
+  }
+
+  .content main {
+    min-height: fit-content;
+    /* height: 100%; */
+    width : 100% !important;
+    /* padding: 5px 0px; */
+  }
 }
 
 /* router-outlet {
