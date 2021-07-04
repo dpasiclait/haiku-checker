@@ -70,6 +70,7 @@
 .new-content .koi-pond {
   height: 100%;
   width: 100%;
+  border: 1px solid blue;
 }
 
 .new-content .koi-pond .koi-fish {
@@ -116,7 +117,6 @@
 .new-content .haiku {
   height: 100%;
   width: 100%;
-  padding: 5px 10px 0px 10px;
   border: 1px solid #E34427;
 }
 
@@ -166,12 +166,6 @@
   width: 30%;
 }
 
-#haiku-form .row .verse {
-  border: 1px solid hotpink;
-  height: 100%;
-  width: 69%;
-}
-
 #haiku-form .row .indicator .verse-output {
   height: 90px;
   width: 90px;
@@ -187,20 +181,67 @@
 	-webkit-text-stroke: 1px #F2F3F4;
 }
 
+#haiku-form .row .verse {
+  border: 1px solid hotpink;
+  height: 100%;
+  width: 69%;
+}
+
 #haiku-form .row .verse .verse-input {
   width: 90%;
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  /* font-size: 20px; */
 }
 
 #haiku-form .row button {
   width: 100px;
+  height: 40px;
+}
+
+#haiku-form .row button#publish {
+  width: 200px;
 }
 
 #haiku-form .row .spacer {
   width: 30%;
+}
+
+@media screen and (max-width: 1000px) {
+  .new-content {
+    flex-direction: column;
+    min-height: fit-content;
+    padding: 0px 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .new-content .koi-pond,
+  .new-content .haiku {
+    min-height: 500px;
+    width: 95%;
+  }
+
+  .new-content .koi-pond {
+    order: 2;
+  }
+
+  .new-content .haiku {
+    order: 1;
+  }
+
+  .new-content .haiku .haiku-submission-form {
+    height: 95%;
+  }
+
+  #haiku-form .row {
+    margin-bottom: 5px;
+  }
+
+  #haiku-form .row .verse {
+    height: auto;
+    min-height: 100%;
+  }
 }
 
 @media screen and (max-height: 700px) {
