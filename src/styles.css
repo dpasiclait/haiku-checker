@@ -74,6 +74,12 @@ body app-root {
   src: url('./assets/custom-fonts/Gustolle-400.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
+@media screen and (max-width: 569px) and (max-height: 321px) {
+  .gustello-font {
+    font-size: xx-large;
+  }
+}
+
 @media screen and (max-width: 361px) {
   .gustello-font {
     font-size: x-large;

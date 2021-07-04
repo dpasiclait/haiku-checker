@@ -38,6 +38,21 @@
   }
 }
 
+@media screen and (max-width: 569px) and (max-height: 321px) {
+  .content header,
+  .content footer {
+    height: auto;
+  }
+
+  .content main {
+    height: fit-content;
+  }
+
+  .content {
+    overflow-y: scroll;
+  }
+}
+
 @media screen and (max-width: 415px) {
   .content header,
   .content footer {

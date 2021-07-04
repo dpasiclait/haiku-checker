@@ -39,7 +39,7 @@
   color: #FFD021;
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 569px) and (max-height: 321px) {
   .header-content {
     height: 50px;
   }
@@ -48,9 +48,16 @@
   .header-content .facts-button {
     padding: 0px 10px;
   }
+}
 
-  .header-content .home-button a .version {
-    font-size: x-large;
+@media screen and (max-width: 415px) {
+  .header-content {
+    height: 50px;
+  }
+
+  .header-content .home-button,
+  .header-content .facts-button {
+    padding: 0px 10px;
   }
 }
 
