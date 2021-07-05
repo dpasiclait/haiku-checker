@@ -252,7 +252,7 @@
   }
 }
 
-@media screen and (max-width: 569px) and (max-height: 321px) {
+@media screen and (max-width: 641px) and (max-height: 361px) {
   .new-content {
     padding: 0px;
     height: auto;
