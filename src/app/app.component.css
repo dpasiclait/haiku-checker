@@ -38,6 +38,21 @@
   }
 }
 
+@media screen and (max-width: 732px) and (max-height: 412px)  {
+  .content header,
+  .content footer {
+    height: 10%;
+  }
+
+  .content main {
+    height: 79%;
+  }
+
+  .content {
+    overflow-y: scroll;
+  }
+}
+
 @media screen and (max-width: 641px) and (max-height: 361px) {
   .content header,
   .content footer {
@@ -46,10 +61,6 @@
 
   .content main {
     height: fit-content;
-  }
-
-  .content {
-    overflow-y: scroll;
   }
 }
 
