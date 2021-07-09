@@ -1,78 +1,16 @@
 .main-content {
   min-height: fit-content;
   height: 100%;
-  width: inherit;
-  padding: 10px 10%;
-}
-
-.main-content h2 {
-  width      : 100%;
-  position: relative;
-  top: 40px;
-  text-align : justify;
-  color      : #3a243b;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-}
-
-.main-content mat-card {
-  min-height: fit-content;
-  max-height: 90%;
-  width: inherit;
-  margin: 0px;
-  padding: 10px;
-  top: -20px;
-}
-
-.main-content mat-card #indicators {
-  width     : 100%;
-  margin    : 0 auto;
-  text-align: center;
-}
-
-.main-content mat-card #indicators .indicator-correct {
-  width           : 10%;
-  display         : inline-block;
-  padding         : 1rem 1rem;
-  background-color: #ffd633;
-  color           : #3a243b;
-  box-shadow      : 5px 5px 4px #9b619e;
-  border-radius   : 50%;
-}
-
-.main-content mat-card #indicators .indicator-incorrect {
-  width           : 10%;
-  display         : inline-block;
-  padding         : 1rem 1rem;
-  background-color: rgb(207, 74, 74);
-  color           : #ffd633;
-  box-shadow      : 5px 5px 4px #9b619e;
-  border-radius   : 50%;
-}
-
-.main-content mat-card #indicators .spacer {
-  margin: 1rem 1rem;
-}
-
-.main-content mat-card form mat-form-field {
-  display     : block;
-  width       : 50%;
-  padding-left: 40%;
-}
-
-/* New Style */
-.new-content {
-  min-height: fit-content;
-  height: 100%;
   width: 100%;
   display: flex;
 }
 
-.new-content .koi-pond {
+.main-content .koi-pond {
   height: 100%;
   width: 100%;
 }
 
-.new-content .koi-pond .koi-fish {
+.main-content .koi-pond .koi-fish {
   height: 400px;
   width: 400px;
   border-radius: 50%;
@@ -82,7 +20,7 @@
               grow 3s linear 30ms infinite normal none paused;
 }
 
-.new-content .koi-pond .koi-fish:hover {
+.main-content .koi-pond .koi-fish:hover {
   animation: rotate 10s linear 30ms infinite normal none running,
               grow 3s linear 30ms infinite normal none running;
 }
@@ -108,17 +46,17 @@
   }
 }
 
-.new-content .koi-pond .koi-fish img {
+.main-content .koi-pond .koi-fish img {
   height: 100%;
   width: 100%;
 }
 
-.new-content .haiku {
+.main-content .haiku {
   height: 100%;
   width: 100%;
 }
 
-.new-content .haiku .haiku-submission-form {
+.main-content .haiku .haiku-submission-form {
   height: 85%;
   min-width: 600px;
   margin: 0px;
@@ -129,13 +67,13 @@
   mix-blend-mode: multiply;
 }
 
-.new-content .haiku .haiku-submission-form .instructions {
+.main-content .haiku .haiku-submission-form .instructions {
   height: 10%;
   width: 100%;
   margin: 0px;
 }
 
-.new-content .haiku .haiku-submission-form .haiku-tools {
+.main-content .haiku .haiku-submission-form .haiku-tools {
   height: 90%;
   width: 100%;
   margin: 0px;
@@ -198,7 +136,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .new-content {
+  .main-content {
     flex-direction: column;
     min-height: fit-content;
     padding: 0px 5px;
@@ -206,25 +144,25 @@
     justify-content: center;
   }
 
-  .new-content .koi-pond,
-  .new-content .haiku {
+  .main-content .koi-pond,
+  .main-content .haiku {
     min-height: 500px;
     width: 95%;
   }
 
-  .new-content .koi-pond {
+  .main-content .koi-pond {
     order: 2;
   }
 
-  .new-content .haiku {
+  .main-content .haiku {
     order: 1;
   }
 
-  .new-content .haiku .haiku-submission-form {
+  .main-content .haiku .haiku-submission-form {
     height: 95%;
   }
 
-  .new-content .haiku .haiku-submission-form .instructions {
+  .main-content .haiku .haiku-submission-form .instructions {
     text-align: center;
   }
 
@@ -239,36 +177,36 @@
 }
 
 @media screen and (max-width: 824px) and (max-height: 415px) {
-  .new-content {
+  .main-content {
     padding: 0px;
   }
 
-  .new-content .koi-pond {
+  .main-content .koi-pond {
     display: none;
   }
 
-  .new-content .haiku {
+  .main-content .haiku {
     min-height: fit-content;
   }
 
-  .new-content .haiku .haiku-submission-form {
+  .main-content .haiku .haiku-submission-form {
     min-width: fit-content;
     height: fit-content;
   }
 
-  .new-content .haiku .haiku-submission-form .instructions {
+  .main-content .haiku .haiku-submission-form .instructions {
     min-width: 500px;
   }
 
-  .new-content .haiku .haiku-submission-form .instructions span {
+  .main-content .haiku .haiku-submission-form .instructions span {
     font-size: 35px;
   }
 
-  .new-content .haiku .haiku-submission-form .instructions {
+  .main-content .haiku .haiku-submission-form .instructions {
     height: 30px;
   }
 
-  .new-content .haiku .haiku-submission-form .haiku-tools {
+  .main-content .haiku .haiku-submission-form .haiku-tools {
     height: fit-content;
   }
 
@@ -330,42 +268,42 @@
 }
 
 @media screen and (max-width: 569px) and (max-height: 361px) {
-  .new-content .haiku {
+  .main-content .haiku {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 415px) and (max-height: 737px) {
-  .new-content .koi-pond {
+  .main-content .koi-pond {
     min-height: 200px !important;
   }
 }
 
 @media screen and (max-width: 769px) {
-  .new-content {
+  .main-content {
     padding: 0px;
   }
 
-  .new-content .koi-pond {
+  .main-content .koi-pond {
     min-height: 300px;
   }
 
-  .new-content .koi-pond .koi-fish {
+  .main-content .koi-pond .koi-fish {
     height: 200px;
     width: 200px;
     animation: rotate 10s linear 30ms infinite normal none running;
   }
 
-  .new-content .koi-pond .koi-fish:hover {
+  .main-content .koi-pond .koi-fish:hover {
     animation: rotate 10s linear 30ms infinite normal none paused;
   }
 
-  .new-content .haiku {
+  .main-content .haiku {
     min-height: 400px;
   }
 
-  .new-content .haiku .haiku-submission-form {
+  .main-content .haiku .haiku-submission-form {
     min-width: 90%;
     mix-blend-mode: normal;
   }
@@ -396,15 +334,15 @@
 }
 
 @media screen and (min-width: 900px) and (max-height: 769px) {
-  .new-content {
+  .main-content {
     flex-direction: unset;
   }
 
-  .new-content .koi-pond {
+  .main-content .koi-pond {
     order: 1;
   }
 
-  .new-content .haiku {
+  .main-content .haiku {
     order: 2;
   }
 }
