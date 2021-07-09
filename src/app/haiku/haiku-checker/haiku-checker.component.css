@@ -403,6 +403,12 @@
   }
 }
 
+@media screen and (max-width: 415px) and (max-height: 737px) {
+  .new-content .koi-pond {
+    min-height: 200px !important;
+  }
+}
+
 @media screen and (max-width: 415px) {
   .new-content {
     padding: 0px;
