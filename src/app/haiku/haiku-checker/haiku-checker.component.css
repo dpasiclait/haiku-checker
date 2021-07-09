@@ -252,6 +252,32 @@
   }
 }
 
+@media screen and (max-width: 1025px) and (max-height: 769px) {
+  .new-content {
+    padding: 0px;
+  }
+
+  .new-content .koi-pond {
+    display: none;
+  }
+
+  .new-content .haiku {
+    min-height: fit-content;
+  }
+
+  .new-content .haiku .haiku-submission-form {
+    min-width: 900px;
+  }
+
+  .new-content .haiku .haiku-submission-form .instructions span {
+    font-size: 40px;
+  }
+
+  .new-content .haiku .haiku-submission-form .haiku-tools {
+    height: fit-content;
+  }
+}
+
 @media screen and (max-width: 824px) and (max-height: 415px) {
   .new-content {
     padding: 0px;
@@ -266,8 +292,16 @@
   }
 
   .new-content .haiku .haiku-submission-form {
-    min-width: 90%;
+    min-width: fit-content;
     height: fit-content;
+  }
+
+  .new-content .haiku .haiku-submission-form .instructions {
+    min-width: 500px;
+  }
+
+  .new-content .haiku .haiku-submission-form .instructions span {
+    font-size: 35px;
   }
 
   .new-content .haiku .haiku-submission-form .instructions {
@@ -332,6 +366,13 @@
 @media screen and (max-width: 641px) and (max-height: 361px) {
   #haiku-form {
     height: fit-content;
+  }
+}
+
+@media screen and (max-width: 569px) and (max-height: 361px) {
+  .new-content .haiku {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
