@@ -17,12 +17,8 @@
   height: 80%;
   width : 100%;
   padding: 5px 0px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
-
-/* @media screen and (max-width: 1367px) {
-
-} */
 
 @media screen and (max-width: 1024px) {
   .content {

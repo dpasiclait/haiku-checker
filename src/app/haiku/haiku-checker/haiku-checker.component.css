@@ -70,7 +70,6 @@
 .new-content .koi-pond {
   height: 100%;
   width: 100%;
-  border: 1px solid blue;
 }
 
 .new-content .koi-pond .koi-fish {
@@ -117,11 +116,9 @@
 .new-content .haiku {
   height: 100%;
   width: 100%;
-  border: 1px solid #E34427;
 }
 
 .new-content .haiku .haiku-submission-form {
-  border: 1px solid red;
   height: 85%;
   min-width: 600px;
   margin: 0px;
@@ -133,35 +130,30 @@
 }
 
 .new-content .haiku .haiku-submission-form .instructions {
-  border: 1px solid green;
   height: 10%;
   width: 100%;
   margin: 0px;
 }
 
 .new-content .haiku .haiku-submission-form .haiku-tools {
-  border: 1px solid green;
   height: 90%;
   width: 100%;
   margin: 0px;
 }
 
 #haiku-form {
-  border: 1px solid black;
   height: 90%;
   width: 90%;
   padding: 5px;
 }
 
 #haiku-form .row {
-  border: 1px solid orange;
   height: 24.5%;
   width: 100%;
   display: flex ;
 }
 
 #haiku-form .row .indicator {
-  border: 1px solid purple;
   height: 100%;
   width: 30%;
 }
@@ -169,7 +161,6 @@
 #haiku-form .row .indicator .verse-output {
   height: 90px;
   width: 90px;
-  border: 1px solid black;
   border-radius: 50%;
   background-image: linear-gradient(to bottom right, #E34427 30%, #FFD021, #F2F3F4);
 }
@@ -182,7 +173,6 @@
 }
 
 #haiku-form .row .verse {
-  border: 1px solid hotpink;
   height: 100%;
   width: 69%;
 }

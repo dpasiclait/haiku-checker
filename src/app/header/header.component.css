@@ -95,17 +95,3 @@
     font-size: large;
   }
 }
-
-/* @media screen and (max-height: 415px) {
-  .header-content {
-    padding: 5px;
-  }
-
-  .header-content .home-button a {
-    font-size: x-large;
-  }
-
-  .header-content .home-button a .version{
-    font-size: larger;
-  }
-} */
