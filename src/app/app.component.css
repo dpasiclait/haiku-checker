@@ -1,8 +1,8 @@
 .content {
   display: flex;
   flex-direction: column;
-  height: 100%;
   min-height: fit-content;
+  height: 100%;
   width : 100%;
   background-image: url('../assets/img/parchment-background.jpg');
   background-color: #cccccc;
@@ -34,7 +34,16 @@
   border: 2px solid red;
 }
 
+@media screen and (max-width: 1367px) {
+  .content header,
+  .content footer {
+    height: fit-content;
+  }
 
+  .content main {
+    height: fit-content;
+  }
+}
 
 /* @media screen and (max-width: 1024px) {
   .content {
