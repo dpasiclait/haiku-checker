@@ -102,3 +102,24 @@
   font-size: large;
   margin   : auto 10% auto auto;
 }
+
+/* New Style */
+.new-content {
+  padding: 20px;
+}
+
+.new-content .title {
+  border: 1px solid red;
+  font-size: 60px;
+  text-align: center;
+}
+
+.new-content .facts {
+  border: 1px solid blue;
+}
+
+.new-content .facts .fact {
+  border: 1px solid green;
+  margin: 10px 10%;
+  min-height: 200px;
+}
