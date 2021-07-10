@@ -6,13 +6,22 @@
   width : 100%;
   background-image: url('../assets/img/parchment-background.jpg');
   background-color: #cccccc;
+  /* border: 5px solid green; */
+}
+
+.content header {
+  margin-bottom: 5px;
 }
 
 .content header,
 .content footer {
-  min-height: fit-content;
+  min-height: 54px;
   height: 7%;
   width : 100%;
+}
+
+.content footer {
+  margin-top: 5px;
 }
 
 .content main {
@@ -20,6 +29,8 @@
   height: 86%;
   width : 100%;
   padding: 5px 0px;
+  margin: 5px 0px;
+  /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 1024px) {
