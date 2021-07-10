@@ -4,14 +4,12 @@
   width: 100%;
   display: flex;
   align-items: center;
-  border: 1px solid green;
 }
 
 .main-content .koi-pond {
   min-height: 600px;
   height: fit-content;
   width: 100%;
-  border: 1px solid red;
 }
 
 .main-content .koi-pond .koi-fish {
@@ -59,7 +57,6 @@
   min-height: 600px;
   height: fit-content;
   width: 100%;
-  border: 1px solid blue;
 }
 
 .main-content .haiku .haiku-submission-form {
@@ -71,21 +68,18 @@
   box-shadow: 2px 2px 2px 2px darkgray;
   border-radius: 30px;
   mix-blend-mode: multiply;
-  border: 1px solid green;
 }
 
 .main-content .haiku .haiku-submission-form .instructions {
   height: 10%;
   width: 100%;
   margin: 0px;
-  border: 1px solid blue;
 }
 
 .main-content .haiku .haiku-submission-form .haiku-tools {
   height: 90%;
   width: 100%;
   margin: 0px;
-  border: 1px solid red;
 }
 
 #haiku-form {
@@ -93,20 +87,17 @@
   height: fit-content;
   width: 90%;
   padding: 5px;
-  border: 1px solid black;
 }
 
 #haiku-form .row {
   height: 24.5%;
   width: 100%;
   display: flex ;
-  border: 1px solid red;
 }
 
 #haiku-form .row .indicator {
   height: 100%;
   width: 30%;
-  border: 1px solid blue;
 }
 
 #haiku-form .row .indicator .verse-output {
@@ -126,7 +117,6 @@
 #haiku-form .row .verse {
   height: 100%;
   width: 69%;
-  border: 1px solid green;
 }
 
 #haiku-form .row .verse .verse-input {
@@ -152,7 +142,6 @@
 .main-content .buffer {
   height: 50px;
   width: 100%;
-  border: 1px solid red;
   display: none;
 }
 
