@@ -5,11 +5,11 @@
 }
 
 html {
-  min-height: 800px;
+  min-height: 826px;
   height: fit-content;
   width: 100%;
   display: flex;
-  /* border: 5px solid black; */
+  border: 5px solid black;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   display: flex;
-  /* border: 5px solid red; */
+  border: 5px solid red;
 }
 
 body app-root {
@@ -27,6 +27,30 @@ body app-root {
   height: 100%; */
   width: 100%;
   /* border: 5px solid blue; */
+}
+
+@media screen and (max-height: 1368px) {
+
+  html {
+    min-height: 1367px;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-height: 1025px) {
+
+  html {
+    min-height: 1024px;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-height: 825px) {
+
+  html {
+    min-height: 100%;
+    height: fit-content;
+  }
 }
 
 /* class used to center inner children */
