@@ -26,8 +26,8 @@
 }
 
 .content main {
-  min-height: fit-content;
-  height: 86%;
+  min-height: 86%;
+  height: fit-content;
   width : 100%;
   padding: 5px 0px;
   margin: 5px 0px;
@@ -42,6 +42,18 @@
 
   .content main {
     height: fit-content;
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .content main {
+    min-height: 450px;
+  }
+}
+
+@media screen and (max-height: 361px) {
+  .content main {
+    min-height: 400px;
   }
 }
 

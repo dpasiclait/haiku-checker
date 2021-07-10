@@ -37,7 +37,6 @@ body app-root {
 }
 
 @media screen and (max-height: 1025px) {
-
   html {
     min-height: 1024px;
     height: fit-content;
@@ -45,7 +44,6 @@ body app-root {
 }
 
 @media screen and (max-height: 825px) {
-
   html {
     min-height: 100%;
     height: fit-content;
