@@ -1,56 +1,134 @@
 <div class="main-content">
-  <h2 class="mat-display-1">Haiku Checker</h2>
+  <div class="koi-pond center-children">
 
-  <mat-card>
-    <div id="indicators">
-      <div class="mat-headline" [ngClass]="{
-          'indicator-correct': (firstCount === 0 || firstCount === 5),
-          'indicator-incorrect': (firstCount != 0 && firstCount != 5)
-        }">
-        {{firstCount}}
-      </div>
-
-      <span class="spacer"></span>
-
-      <div class="mat-headline" [ngClass]="{
-          'indicator-correct': (secondCount === 0 || secondCount === 7),
-          'indicator-incorrect': (secondCount != 0 && secondCount != 7)
-        }">
-        {{secondCount}}
-      </div>
-
-      <span class="spacer"></span>
-
-      <div class="mat-headline" [ngClass]="{
-          'indicator-correct': (thirdCount === 0 || thirdCount === 5),
-          'indicator-incorrect': (thirdCount != 0 && thirdCount != 5)
-        }">
-        {{thirdCount}}
-      </div>
+    <div class="koi-fish">
+      <img src="../../../assets/img/koi1.png" alt="">
     </div>
 
-    <form #haikuForm="ngForm" (submit)="checkHaiku(haikuForm)">
-      <mat-form-field>
-        <input matInput type="text" placeholder="This is the first line" name="firstVerse" ngModel #firstInput="ngModel"
-          required>
-        <mat-error *ngIf="firstInput.invalid">Please insert a verse</mat-error>
-      </mat-form-field>
+  </div>
 
-      <mat-form-field>
-        <input matInput type="text" placeholder="followed by the second line" name="secondVerse" ngModel
-          #secondInput="ngModel" required>
-        <mat-error *ngIf="secondInput.invalid">Please insert a verse</mat-error>
-      </mat-form-field>
+  <div class="haiku center-children">
 
-      <mat-form-field>
-        <input matInput type="text" placeholder="with the third to end" name="thirdVerse" ngModel #thirdInput="ngModel"
-          required>
-        <mat-error *ngIf="thirdInput.invalid">Please insert a verse</mat-error>
-      </mat-form-field>
+    <div class="haiku-submission-form">
 
-      <button mat-raised-button color="primary" type="submit">
-        Check Haiku
-      </button>
-    </form>
-  </mat-card>
+      <div class="instructions center-children">
+        <span class="gustello-font">Write your haiku below. Try to get a 5-7-5 verse count.</span>
+      </div>
+
+      <div class="haiku-tools center-children">
+
+        <form id="haiku-form" (ngSubmit)="checkHaiku(haikuForm)" #haikuForm="ngForm">
+
+          <div class="row">
+
+            <div class="indicator center-children">
+              <div id="first-output" class="verse-output center-children">
+                <div class="count">{{firstCount}}</div>
+                <div class="blob1">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+                <div class="blob2">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="verse center-children">
+              <input
+                type="text"
+                id="first-verse"
+                class="verse-input gustello-font"
+                placeholder="This is the first line"
+                name="firstVerse"
+                ngModel #firstInput="ngModel"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="indicator center-children">
+              <div id="second-output" class="verse-output center-children">
+                <div class="count">{{secondCount}}</div>
+                <div class="blob3">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+                <div class="blob4">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="verse center-children">
+              <input
+                type="text"
+                id="second-verse"
+                class="verse-input gustello-font"
+                placeholder="Followed by the second line"
+                name="secondVerse"
+                ngModel #secondInput="ngModel"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="indicator center-children">
+              <div id="third-output" class="verse-output center-children">
+                <div class="count">{{thirdCount}}</div>
+                <div class="blob5">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+                <div class="blob6">
+                  <div class="cell1"></div>
+                  <div class="cell2"></div>
+                  <div class="cell3"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="verse center-children">
+              <input
+                type="text"
+                id="third-verse"
+                class="verse-input gustello-font"
+                placeholder="With the third to end"
+                name="thirdVerse"
+                ngModel #thirdInput="ngModel"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="row center-children">
+            <button id="reset" type="reset" class="secondary-button">Clear</button>
+            <span class="spacer"></span>
+            <button id="publish" type="submit" class="primary-button">Count Syllables</button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="buffer"></div>
+
 </div>

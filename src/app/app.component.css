@@ -1,47 +1,55 @@
-main {
-  height: 79.7%;
-  width : 80%;
-  margin: 1rem auto;
-  /* 1rem = 16px to be put on top*/
-}
-
-app-header,
-app-footer {
-  height: 10%;
-}
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-html,
-body{
-  height: 100%;
-  width : 100%;
-}
-
 .content {
+  display: flex;
+  flex-direction: column;
   min-height: fit-content;
   height: 100%;
   width : 100%;
+  background-image: url('../assets/img/parchment-background.jpg');
+  background-color: #cccccc;
 }
 
-@media screen and (max-height: 415px) {
-  .content {
-    height: fit-content;
-    width : 100%;
-  }
+.content header {
+  margin-bottom: 5px;
 }
 
 .content header,
 .content footer {
-  min-height: fit-content;
-  height: 10%;
+  min-height: 54px;
+  height: 7%;
   width : 100%;
 }
 
+.content footer {
+  margin-top: 5px;
+}
+
 .content main {
-  min-height: fit-content;
-  height: 80%;
+  min-height: 86%;
+  height: fit-content;
   width : 100%;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+@media screen and (max-width: 1367px) {
+  .content header,
+  .content footer {
+    height: fit-content;
+  }
+
+  .content main {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .content main {
+    min-height: 450px;
+  }
+}
+
+@media screen and (max-height: 361px) {
+  .content main {
+    min-height: 400px;
+  }
 }

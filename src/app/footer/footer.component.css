@@ -1,21 +1,94 @@
 .footer-content {
-  min-height: fit-content;
+  min-height: 100%;
+  height: fit-content;
   width: 100%;
-  height: 100%;
+  display: flex;
 }
 
-.footer-content mat-toolbar {
-  height: inherit;
-}
-
-.footer-content mat-toolbar a {
+.footer-content div a {
   text-decoration: none;
+  color: black;
 }
 
-.footer-content mat-toolbar .license {
-  font-size: small;
+.footer-content .license,
+.footer-content .github-button {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
 }
 
-.footer-content mat-toolbar .spacer {
+.footer-content .license span a{
+  color: #E34427;
+}
+
+.footer-content .spacer {
   flex: 1 1 auto;
 }
+
+.footer-content .github-button {
+  font-size: small;
+  font-weight: bold;
+}
+
+.footer-content .github-button a:hover {
+  color: #E34427;
+}
+
+@media screen and (max-width: 412px) {
+  .footer-content .license {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer-content .license {
+    font-size: x-large;
+  }
+
+  .footer-content .github-button {
+    font-size: x-small;
+  }
+}
+
+/* @media screen and (max-width: 1025px) and (max-height: 1367px) {
+  .footer-content .github-button {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 824px) and (max-height: 415px) {
+  .footer-content {
+    height: 50px;
+  }
+
+  .footer-content .license{
+    font-size: xx-large;
+  }
+
+  .footer-content .license,
+  .footer-content .github-button {
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .footer-content {
+    height: 50px;
+  }
+
+  .footer-content .license,
+  .footer-content .github-button {
+    padding: 0px 10px;
+  }
+
+  .footer-content .github-button {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .footer-content .license,
+  .footer-content .github-button {
+    padding: 0px 5px;
+  }
+} */
