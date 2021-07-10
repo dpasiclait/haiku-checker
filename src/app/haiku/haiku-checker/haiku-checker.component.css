@@ -260,3 +260,42 @@
     font-size: x-large;
   }
 }
+
+@media screen and (max-width: 769px) and (min-height: 1023px) {
+  .main-content .koi-pond {
+    min-height: 450px;
+    height: fit-content;
+    display: flex;
+  }
+
+  .main-content .koi-pond .koi-fish {
+    height: 350px;
+    width: 350px;
+    animation: rotate 10s linear 30ms infinite normal none running;
+  }
+
+  .main-content .koi-pond .koi-fish:hover {
+    animation: rotate 10s linear 30ms infinite normal none paused;
+  }
+
+  .main-content .haiku .haiku-submission-form .instructions span {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1023px) and (max-height: 769px) {
+  .main-content .koi-pond .koi-fish {
+    height: 300px;
+    width: 300px;
+    animation: rotate 10s linear 30ms infinite normal none running;
+  }
+
+  .main-content .koi-pond .koi-fish:hover {
+    animation: rotate 10s linear 30ms infinite normal none paused;
+  }
+
+  .main-content .haiku .haiku-submission-form .instructions span {
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
