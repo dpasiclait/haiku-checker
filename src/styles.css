@@ -4,19 +4,24 @@
   padding: 0px;
 }
 
-html,
+html {
+  height: 800px;
+  min-height: fit-content;
+  width: 100%;
+  display: flex;
+}
+
 body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
 }
-
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body app-root {
   height: 100%;
   width: 100%;
-  min-height: fit-content;
-  min-width : fit-content;
 }
 
 /* class used to center inner children */
