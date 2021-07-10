@@ -1,125 +1,85 @@
 .main-content {
+  margin: 0px 5px 5px 5px;
   min-height: fit-content;
   height: 100%;
-  padding: 10px 10%;
+  padding: 5px 10px;
 }
 
-.main-content mat-card#container {
-  min-height: fit-content;
-  max-height: 85%;
-}
-
-.main-content mat-card#container.scroll {
-  height          : 95%;
-  background-color: #ffd633;
-  padding         : 15px;
-  overflow-x      : hidden;
-  overflow-y      : auto;
-  box-shadow      : 5px 5px 4px #9b619e;
-}
-
-.main-content mat-card#container mat-card-title,
-.main-content mat-card#container mat-card.content mat-card-title {
-  margin     : auto;
-  color      : #3a243b;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
-
-.main-content mat-card#container mat-card-title,
-.main-content mat-card#container mat-card.content mat-card-title,
-.main-content mat-card#container mat-card.content mat-card-subtitle,
-.main-content mat-card#container mat-card.content mat-card-content {
-  font-size  : x-large;
-}
-
-.main-content mat-card#container mat-card-title.mat-display-1 {
-  width: 80%;
-  text-align : justify;
-  padding-top: 1rem;
-  font-size  : xx-large;
-}
-
-.main-content mat-card#container mat-card.content mat-card-subtitle {
-  margin     : auto 5% auto 5%;
-  color      : #9b619e;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-}
-
-.main-content mat-card#container mat-card.content {
-  margin-top: 1rem;
-  width: 80%;
-  box-shadow: 5px 5px 4px #9b619e;
-}
-
-.main-content mat-card#container mat-card.content mat-card-content {
-  margin     : auto;
-  color      : #3a243b;
-  font-family: 'Gabriola', 'Courier New', Courier, monospace;
-}
-
-.main-content mat-card#container mat-card.content mat-card-content span.spacer {
-  margin: 1rem 1rem;
-}
-
-.main-content mat-card#container mat-card.content mat-card-content span.indent {
-  margin-left: 5%;
-}
-
-.main-content mat-card#container mat-card.content mat-card-content p.indent {
-  text-indent: 5%;
-  margin     : auto;
-}
-
-.main-content mat-card#container mat-card.content mat-card-content .italicized {
-  font-weight: bold;
-  font-style : italic;
-  color      : #9b619e;
-}
-
-.main-content mat-card#container mat-card.right-card {
-  margin-left: 10%;
-}
-
-.main-content mat-card#container mat-card.right-card mat-card-title,
-.main-content mat-card#container mat-card.right-card mat-card-subtitle,
-.main-content mat-card#container mat-card.left-card mat-card-content {
-  text-align: right;
-}
-
-.main-content mat-card#container mat-card.right-card mat-card-content,
-.main-content mat-card#container mat-card.left-card mat-card-title,
-.main-content mat-card#container mat-card.left-card mat-card-subtitle {
-  text-align: left;
-}
-
-.main-content mat-card#container mat-card.left-card {
-  margin-left: 10px;
-}
-
-.main-content mat-card#container mat-card.left-card mat-card-content p.cutting-words {
-  color    : #9b619e;
-  font-size: large;
-  margin   : auto 10% auto auto;
-}
-
-/* New Style */
-.new-content {
-  padding: 20px;
-}
-
-.new-content .title {
-  border: 1px solid red;
+.main-content .title {
+  height: 50px;
   font-size: 60px;
   text-align: center;
 }
 
-.new-content .facts {
-  border: 1px solid blue;
+.main-content hr {
+  height: 3px;
+  border: none;
+  background-color: black;
+  margin: 5px 0px;
 }
 
-.new-content .facts .fact {
-  border: 1px solid green;
-  margin: 10px 10%;
+.main-content .facts {
+  height: fit-content;
+  min-height: 600px;
+}
+
+.main-content .facts .fact {
   min-height: 200px;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 10%;
+  background-color: blanchedalmond;
+  box-shadow: 2px 2px 2px 2px darkgray;
+  border-radius: 30px;
+  mix-blend-mode: multiply;
+  text-align: center;
+}
+
+.main-content .facts .fact .fact-title {
+  font-size: larger;
+  color: #E34427;
+}
+
+.main-content .facts .fact .fact-sub-title {
+  font-size: xx-large;
+  color: #F16323;
+}
+
+.main-content .facts .fact .fact-content {
+  font-size: larger;
+}
+
+.main-content .facts .fact .fact-content .highlight {
+  font-weight: bold;
+  color: #E34427;
+}
+
+.main-content .facts .fact .fact-content .cutting-words {
+  font-size: xx-large;
+  font-style: italic;
+  color: #F16323;
+}
+
+.main-content .facts .fact .fact-content .italicized {
+  font-style: italic;
+  color: #F16323;
+}
+
+.main-content .buffer {
+  height: 50px;
+}
+
+@media screen and (max-width: 415px) {
+  .main-content .facts .fact {
+    margin: 10px 0px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .main-content .title {
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+  }
 }
