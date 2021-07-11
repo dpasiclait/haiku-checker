@@ -3,31 +3,30 @@ const express = require('express');
 const SyllableDictionaryController = require('../controllers/syllable-dictionary.controller');
 const router                       = express.Router();
 
-// TODO: ADD SWAGGER UI
 router.get('/upload_data', SyllableDictionaryController.uploadSyllablesToDictionary);
 
 /**
  * @swagger
  * /api/syllable_dictionary/:
  *   post:
- *     summary: Verifies a the syllable count of a haiku
+ *     summary: Verifies the syllable count of a haiku
  *     description: This service receives an input object with three verses to count the syllables of each line
  *     requestBody:
  *       required: true
  *       content:
- *        application/json:
- *          schema:
- *            type: object
- *            properties:
- *              firstVerse:
- *                type: string
- *                example: "This is the first line"
- *              secondVerse:
- *                type: string
- *                example: "Followed by the second line"
- *              thirdVerse:
- *                type: string
- *                example: "With the third to end"
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstVerse:
+ *                 type: string
+ *                 example: "This is the first line"
+ *               secondVerse:
+ *                 type: string
+ *                 example: "Followed by the second line"
+ *               thirdVerse:
+ *                 type: string
+ *                 example: "With the third to end"
  *     responses:
  *       '200':
  *         description: Successfully returns the three verses' syllable count and a list of all unknown words
