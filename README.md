@@ -178,4 +178,4 @@ Hopefully after deployment of the current version, I can implement the simplifie
 ## Special Thanks
 1. [This generous github user](https://github.com/dwyl/english-words) and [this internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
 2. [How Many Syllables](https://www.howmanysyllables.com/) for the syllable counts.
-3. [Scheme Color Tool](https://www.schemecolor.com/) for the color schemes of the koi fish
+3. [Scheme Color Tool](https://www.schemecolor.com/) for the color schemes of the koi fish.
