@@ -2,9 +2,33 @@ const express    = require('express');
 const Path       = require('path');
 const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
 
 const syllableDictionaryRoute = require('./routes/syllable-dictionary.route');
 const app                     = express();
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: "Haiku Checker Backend Server API",
+      description: "Server side api to count haiku verse syllables.",
+      contact: {
+        name: "Djidjelly Siclait"
+      },
+      version: "1.1.1",
+      servers: [{
+        url: "http://localhost:3000",
+        description: "Development server"
+    }]
+    },
+  },
+  apis: ["./backend/routes/*.route.js"],
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+
 
 // middleware used to accept json package request from clients
 app.use(bodyParser.json());
@@ -49,6 +73,8 @@ app.use((req, res, next) => {
 });
 
 // Setting up all recognized paths for this REST application
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, {explorer: true}));
+
 app.use('/api/syllable_dictionary', syllableDictionaryRoute);
 
 module.exports = app;
