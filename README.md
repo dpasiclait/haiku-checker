@@ -134,10 +134,10 @@ The current logic (as of version 1.1.0) is the following:
   - I have gained more respect for frontend UI designers working with different designs. 
   - Do it step by step and make sure any new code you add does not affect previous code.
 
-- It pays explore
-  - Many times, I've stumbled upon cool tricks to try out and experiment to improve the UI design 
-  - Many tools can help improve your understanding of the basic design, like color pickers, css webkit, cool fonts, etc. All these go to improving the overall theme of the website and achieve a distinguished identity
-  - It's fun to see what others are doing and experimenting to try to improve upon what they have done. It is also a great source of expiration
+- It pays to explore
+  - Many times, I've stumbled upon cool tricks to try out and experiment to improve the UI design/. 
+  - Many tools can help improve your understanding of the basics of design, like color pickers, css webkit, cool fonts, etc. All these go to improving the overall theme of the website and achieve a distinguished identity.
+  - It's fun to see what others are doing and experimenting to try to improve upon what they have done. It is also a great source of inspiration.
 
 #### v1.0.0
 - KISS: Keep It Simple Silly
@@ -178,4 +178,4 @@ Hopefully after deployment of the current version, I can implement the simplifie
 ## Special Thanks
 1. [This generous github user](https://github.com/dwyl/english-words) and [this internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
 2. [How Many Syllables](https://www.howmanysyllables.com/) for the syllable counts.
-3.[Scheme Color Tool](https://www.schemecolor.com/) for the color schemes of the koi fish
+3. [Scheme Color Tool](https://www.schemecolor.com/) for the color schemes of the koi fish
