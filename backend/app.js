@@ -15,7 +15,9 @@ const swaggerOptions = {
       title: "Haiku Checker Backend Server API",
       description: "Server side api to count haiku verse syllables.",
       contact: {
-        name: "Djidjelly Siclait"
+        name: "Djidjelly Siclait",
+        url: 'https://www.linkedin.com/in/djidjelly-philippe-siclait-91a3b6b2/',
+        email: 'dpasiclait@gmail.com'
       },
       version: "1.1.1",
       servers: [

@@ -3,6 +3,70 @@ const express = require('express');
 const SyllableDictionaryController = require('../controllers/syllable-dictionary.controller');
 const router                       = express.Router();
 
+/**
+ * @swagger
+ *   components:
+ *     schemas:
+ *       Haiku:
+ *         type: object
+ *         required:
+ *           - firstVerse
+ *           - secondVerse
+ *           - thirdVerse
+ *         properties:
+ *           firstVerse:
+ *             type: string
+ *             description: The first verse of the haiku
+ *           secondVerse:
+ *             type: string
+ *             description: The second verse of the haiku
+ *           thirdVerse:
+ *             type: string
+ *             description: The third verse of the haiku
+ *         example:
+ *           firstVerse: "This is the first line"
+ *           secondVerse: "Followed by the second line"
+ *           thirdVerse: "With the third to end"
+ */
+
+/**
+ * @swagger
+ *   components:
+ *     schemas:
+ *       HaikuVerseCount:
+ *         type: object
+ *         required:
+ *           - firstVerseCount
+ *           - secondVerseCount
+ *           - thirdVerseCount
+ *           - unknownWords
+ *         properties:
+ *           firstVerseCount:
+ *             type: number
+ *             description: The amount of syllables present in the first verse
+ *           secondVerseCount:
+ *             type: number
+ *             description: The amount of syllables present in the second verse
+ *           thirdVerseCount:
+ *             type: number
+ *             description: The amount of syllables present in the third verse
+ *           unknownWords:
+ *             type: array
+ *             description: A list of all the words that are not recognized by the function and do not have a syllable count at the moment
+ *         example:
+ *           firstVerseCount: 5
+ *           secondVerseCount: 7
+ *           thirdVerseCount: 5
+ *           unknownWords: ["unknown1", "unknown2"]
+ */
+
+/**
+ * @swagger
+ *   tags:
+ *     name: Haiku Verifier
+ *     description: Services to verify a haiku
+ */
+
 router.get('/upload_data', SyllableDictionaryController.uploadSyllablesToDictionary);
 
 /**
@@ -11,22 +75,13 @@ router.get('/upload_data', SyllableDictionaryController.uploadSyllablesToDiction
  *   post:
  *     summary: Verifies the syllable count of a haiku
  *     description: This service receives an input object with three verses to count the syllables of each line
+ *     tags: [Haiku Verifier]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               firstVerse:
- *                 type: string
- *                 example: "This is the first line"
- *               secondVerse:
- *                 type: string
- *                 example: "Followed by the second line"
- *               thirdVerse:
- *                 type: string
- *                 example: "With the third to end"
+ *             $ref: '#/components/schemas/Haiku'
  *     responses:
  *       '200':
  *         description: Successfully returns the three verses' syllable count and a list of all unknown words
@@ -36,20 +91,7 @@ router.get('/upload_data', SyllableDictionaryController.uploadSyllablesToDiction
  *               type: object
  *               properties:
  *                 payload:
- *                   type: object
- *                   properties:
- *                     firstVerseCount:
- *                       type: number
- *                       example: 5
- *                     secondVerseCount:
- *                       type: number
- *                       example: 7
- *                     thirdVerseCount:
- *                       type: number
- *                       example: 5
- *                     unknownWords:
- *                       type: array
- *                       example: ['unknown_word1', 'unknown_word2']
+ *                   $ref: '#/components/schemas/HaikuVerseCount'
  *                 timestamp:
  *                  type: number
  *                  example: 1626026131764
