@@ -47,3 +47,4 @@ Thumbs.db
 nodemon.json
 environment.prod.ts
 environment.ts
+backend/swagger.json
