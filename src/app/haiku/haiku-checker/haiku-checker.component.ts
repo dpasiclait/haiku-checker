@@ -91,6 +91,11 @@ export class HaikuCheckerComponent {
             }
           });
         }
-      });
+      },
+      (error: any) => {
+        alert('We are experiencing some server issues. Please come back at a later time.');
+        console.log(error);
+      }
+    );
   }
 }
