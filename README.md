@@ -1,4 +1,4 @@
-# HaikuChecker v1.1.0
+# HaikuChecker v1.1.1
 Verify the syllable count of your haiku
 
 ## Description
@@ -51,12 +51,20 @@ As well as improving the responsive layout for most modern devices, this version
   }
 ```
 
-## Bug Fixes
-### v1.0.1
+#### Bug Fixes for v1.1.0
+##### v1.1.1 Client Server Compatibility
+1. An issue with the data transfer between client and serve has been resolve to accommodate for the new UI redesign.
+2. [Swagger UI](https://swagger.io/) and [Swagger JSDoc](https://www.npmjs.com/package/swagger-jsdoc) were integrated to better document and monitor the server side application.
+
+### v1.0.0 Haiku Checker Launch
+This is a simple web application with client-server architecture, dedicated to verifying the syllable count of Haiku. With a simple UI, submit your Haiku to be analyzed and discover how many syllables make up each verse.
+
+#### Bug Fixes for v1.0.0
+##### v1.0.1 Fontawesome Integration
 1. Script reference for fontawesome.js was replaced by link to incorporated stylesheet fontawesome.min.css within assets folder
 2. Although no code had to change for this bug, domain name forwarding with masking was disabled to allow external links to Github and LinkedIn to redirect without frame-ancestor rejections
 
-### v1.0.2
+##### v1.0.2 Basic Responsive Design
 1. Responsive design, adapting to most modern devices. This also extends to landscape mode on mobile phones.
 
 ## Interested In the Behind the Scenes
@@ -174,6 +182,7 @@ Hopefully after deployment of the current version, I can implement the simplifie
 - [Angular Material Design v11.2.1](https://material.angular.io/) for the frontend ui (Deprecated)
 - [Mongoose v5.11.18](https://mongoosejs.com/) for database connection
 - [Fontawesome v4.7.0](https://fontawesome.com/v4.7.0/get-started/) for .min.css and icon resources
+- [Swagger UI Express v4.1.6](https://swagger.io/) for API documentation.
 
 ## Special Thanks
 1. [This generous github user](https://github.com/dwyl/english-words) and [this internet denizen](http://www.mieliestronk.com/wordlist.html) for providing the list of words.
